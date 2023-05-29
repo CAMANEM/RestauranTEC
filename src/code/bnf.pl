@@ -2,6 +2,7 @@
     Here is build the BNF (Backus-Naur Form) used for the expert system
     The current BNF is build based in the book "El Lenguaje de Programación PROLOG", de M. Teresa. Escrig.
    -----------------------------------------------------------------------------------------------------------*/
+:- style_check(-singleton).
 
 
 % <><><><><><><><> adjectives <><><><><><><><><>
@@ -685,3 +686,13 @@ sentence(S0,S):-
 sentence(S0,S):-
     pronoun(Num, Prsn, S0, S1),
     verb_phrase(Num, Gen, Prsn, S1, S).
+
+
+:- initialization(test).
+
+test:-
+    writeln('**************************************************'),
+    writeln('***************    RestauranTEC    ***************'),
+    writeln('**************************************************'),
+    writeln("Inserte una oracion para saber si esta es valida"),
+    readln(Ans), sentence(Ans,[]).
