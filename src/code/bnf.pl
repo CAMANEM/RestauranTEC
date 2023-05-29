@@ -688,7 +688,7 @@ sentence(S0,S):-
     verb_phrase(Num, Gen, Prsn, S1, S).
 
 
-:- initialization(test).
+% :- initialization(test).
 
 test:-
     writeln('**************************************************'),
