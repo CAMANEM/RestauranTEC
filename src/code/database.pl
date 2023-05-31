@@ -7,22 +7,133 @@
 
 % En cartago:
 restaurante([
-    ['mcdonalds','McDonalds'],
+    'McDonalds',
     'rapida',
     'Cartago',
     '150 m sur del walmart de caballo blanco',
-    ['Hamburguesa','Desayuno','Postre','Papas fritas'],
+    ['Hamburguesa','Desayuno','Postre','Papas'],
      '30',
      'Este es un restaurante para toda la familia, area de juego para niños']).
 
+
 restaurante([
-    ['subway','Subway'],
+     'Balcon Criollo',
+     'tipica',
+     'Cartago',
+     'Diagonal a esquina Noroeste del Parque Central de Cartago',
+     ['Casado','Prensada','Mondongo','Tortilla'],
+     '18',
+     'Verdadera comida costarricense, los esperamos']).
+
+restaurante([
+    'KFC',
+    'rapida',
+    'Cartago',
+    'diagonal al mercado central, Av. 6',
+    ['Hamburguesa','Desayuno','Postre','Papas'],
+    '12',
+    'El mejor pollo al mejor precio, aproveche']).
+
+
+% En Heredia:
+
+restaurante([
+    'Subway',
     'saludable',
-    ['Cartago','Cartago'],
+    'Heredia',
     '500m oeste de la entrada principal del ITCR',
-    ['Sandwich','Ensalada','Burrito','Desayuno'],
+    ['Sandwich','Ensalada','Pasta','Falafel'],
     '20',
     'Pregunta por el sub del dia, un delicioso sandwich a buen precio']).
+
+restaurante([
+    'KFC',
+    'rapida',
+    'Heredia',
+    'diagonal al mercado central, Av. 6',
+    ['Hamburguesa','Desayuno','Postre','Papas'],
+    '12',
+    'El mejor pollo al mejor precio, aproveche']).
+
+
+restaurante([
+     'La Dolce Vita',
+     'italiana',
+     'Heredia',
+     '25 m. Este de la Casa Regional ANDE',
+     ['Pizza','Spaghetti ','Lasagna','Gelato'],
+     '10',
+     'La mas autentica comida italiana a su alcance']).
+
+restaurante([
+     'Ragu',
+     'italiana',
+     'Heredia',
+     '25 m. Este de la esquina Sureste de la Iglesia Catolica de Alajuela',
+     ['Pizza','Spaghetti ','Lasagna','Gelato'],
+     '12',
+     'La mas famosa comida italiana para su deleite']).
+
+
+
+% San Jose
+
+restaurante([
+     'Balcon Criollo',
+     'tipica',
+     'San Jose',
+     'Diagonal a esquina Noroeste del Parque La Sabana',
+     ['Casado','Prensada','Mondongo','Tortilla'],
+     '15',
+     'Verdadera comida costarricense, los esperamos']).
+
+
+restaurante([
+    'Cuchara Oriental',
+    'china',
+    'San Jose',
+    'entre Av 16 y 14 sobre calle 11 Avenida Cleto González Víquez',
+    ['Gyozas','Dumplings','Cantones','Tofu'],
+    '35',
+    'Le traemos los platillos mas exquisitos oriente hasta su mesa']).
+
+restaurante([
+    'Yong Xing',
+    'china',
+    'San Jose',
+    '100 mts oeste del Super Kion',
+    ['Gyozas','Dumplings','Cantones','Tofu'],
+    '20',
+    'El sabor y legado de oriente traido hasta su mesa']).
+
+
+restaurante([
+    'Samadhi',
+    'saludable',
+    'San Jose',
+    'Calle 35, entre ave 5 Y 7, Barrio Escalante',
+    ['Sandwich','Ensalada','Pasta','Falafel'],
+    '11',
+    'La mejor comida vegana de todo el pais']).
+
+
+restaurante([
+    'KFC',
+    'rapida',
+    'Heredia',
+    'diagonal al mercado central, Av. 6',
+    ['Hamburguesa','Desayuno','Postre','Papas'],
+    '12',
+    'El mejor pollo al mejor precio, aproveche']).
+
+restaurante([
+     'Rancho Los Coyotes',
+     'tipica',
+     'San Jose',
+     '1.6 km al oeste, 100 m al sur del Parque Republica del Peru',
+     ['Casado','Prensada','Mondongo','Tortilla'],
+     '6',
+     'Verdadera comida guanacasteca, los esperamos']).
 
 /*
 
@@ -30,18 +141,6 @@ restaurante([[balconCriollo,'Balcon Criollo'] ,tipica
 ,['Cartago','Cartago'],'Costado este de la municipalidad enavenida
 central de Cartago',['Chifrijo','Casados','Olla de
 carne','Hamburguesas']]).*/
-
-% En San Jose
-
-
-
-
-% En Heredia
-
-
-
-
-
 
 % La informacion de que restaurantes tienen ciertas comidas tiene el
 % siguiente formato:
@@ -52,11 +151,11 @@ carne','Hamburguesas']]).*/
 
 
 
-comida(['rapida',['hamburguesa','papas fritas','sandwich'],[mcDonalds]]).
-comida(['tipica',['torilla de queso','olla de carne'],[balconCriollo]]).
-comida(['saludable',['',''],[]]).
-comida(['italiana',[''],[]]).
-comida(['china',[''],[]]).
+comida(['rapida',['hamburguesa','papas','sandwich'],['McDonalds', 'KFC']]).
+comida(['tipica',['casado','prensada','mondongo','tortilla'],['Balcon Criollo', 'Rancho Los Coyotes']]).
+comida(['saludable',['sandwich','ensalada','pasta','falafel'],['Samadhi', 'Subway']]).
+comida(['italiana',['pizza','spaghetti ','lasagna','gelato'],['La Dolce Vita', 'Ragu']]).
+comida(['china',['gyozas','dumplings','cantones','tofu'],['Cuchara Oriental', 'Yong Xing']]).
 
 
 
@@ -69,24 +168,20 @@ comida(['china',[''],[]]).
 % bebida(['',[],[]]).
 
 
-bebida(['natural',['cas','fresa'],[balconCriollo]]).
-bebida(['caliente',['café','chocolate','agua dulce'],[balconCriollo]]).
-bebida(['gaseosa',['coca cola','sprite','fanta'],[mcDonalds,subway]]).
-bebida(['coctel',['piña colada','margarita'],[balconCriollo]]).
-bebida(['cerveza',['nacional','corona'],[balconCriollo]]).
+bebida(['natural',['cas','fresa'],['Balcon Criollo', 'Rancho Los Coyotes', 'Samadhi', 'Subway', 'Cuchara Oriental', 'Yong Xing', 'La Dolce Vita', 'Ragu']]).
+bebida(['caliente',['café','chocolate','agua dulce'],['Balcon Criollo', 'Rancho Los Coyotes', 'Cuchara Oriental', 'Yong Xing']]).
+bebida(['gaseosa',['coca cola','sprite','fanta'],['McDonalds', 'KFC', 'Cuchara Oriental', 'Yong Xing', 'La Dolce Vita', 'Ragu']]).
+bebida(['coctel',['piña colada','margarita'],['Balcon Criollo', 'Rancho Los Coyotes', 'La Dolce Vita', 'Ragu']]).
+bebida(['cerveza',['nacional','corona'],['Balcon Criollo', 'Rancho Los Coyotes']]).
 
 
 
-/*
- *
- *
- *
- */
 
 
-
-lugar(['Cartago',['']]).
-lugar(['cartago',['']]).
-lugar(['San Jose',['']]).
-lugar(['san jose',['']]).
+lugar(['Cartago',['McDonalds', 'Balcon Criollo', 'KFC']]).
+lugar(['cartago',['McDonalds', 'Balcon Criollo', 'KFC']]).
+lugar(['San Jose',['Balcon Criollo', 'Cuchara Oriental', 'Yong Xing', 'Samadhi', 'KFC', 'Rancho Los Coyotes']]).
+lugar(['san jose',['Balcon Criollo', 'Cuchara Oriental', 'Yong Xing', 'Samadhi', 'KFC', 'Rancho Los Coyotes']]).
+lugar(['Heredia',['Subway', 'KFC', 'La Dolce Vita', 'Ragu']]).
+lugar(['heredia',['Subway', 'KFC', 'La Dolce Vita', 'Ragu']]).
 
