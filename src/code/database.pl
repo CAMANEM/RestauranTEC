@@ -81,7 +81,7 @@ restaurante([
 restaurante([
      'Balcon Criollo',
      'tipica',
-     'San Jose',
+     'SanJose',
      'Diagonal a esquina Noroeste del Parque La Sabana',
      ['Casado','Prensada','Mondongo','Tortilla'],
      '15',
@@ -91,7 +91,7 @@ restaurante([
 restaurante([
     'Cuchara Oriental',
     'china',
-    'San Jose',
+    'SanJose',
     'entre Av 16 y 14 sobre calle 11 Avenida Cleto González Víquez',
     ['Gyozas','Dumplings','Cantones','Tofu'],
     '35',
@@ -100,7 +100,7 @@ restaurante([
 restaurante([
     'Yong Xing',
     'china',
-    'San Jose',
+    'SanJose',
     '100 mts oeste del Super Kion',
     ['Gyozas','Dumplings','Cantones','Tofu'],
     '20',
@@ -110,7 +110,7 @@ restaurante([
 restaurante([
     'Samadhi',
     'saludable',
-    'San Jose',
+    'SanJose',
     'Calle 35, entre ave 5 Y 7, Barrio Escalante',
     ['Sandwich','Ensalada','Pasta','Falafel'],
     '11',
@@ -120,7 +120,7 @@ restaurante([
 restaurante([
     'KFC',
     'rapida',
-    'Heredia',
+    'SanJose',
     'diagonal al mercado central, Av. 6',
     ['Hamburguesa','Desayuno','Postre','Papas'],
     '12',
@@ -129,7 +129,7 @@ restaurante([
 restaurante([
      'Rancho Los Coyotes',
      'tipica',
-     'San Jose',
+     'SanJose',
      '1.6 km al oeste, 100 m al sur del Parque Republica del Peru',
      ['Casado','Prensada','Mondongo','Tortilla'],
      '6',
@@ -170,8 +170,8 @@ comida(['china',['gyozas','dumplings','cantones','tofu'],['Cuchara Oriental', 'Y
 
 bebida(['natural',['cas','fresa'],['Balcon Criollo', 'Rancho Los Coyotes', 'Samadhi', 'Subway', 'Cuchara Oriental', 'Yong Xing', 'La Dolce Vita', 'Ragu']]).
 bebida(['caliente',['café','chocolate','agua dulce'],['Balcon Criollo', 'Rancho Los Coyotes', 'Cuchara Oriental', 'Yong Xing']]).
-bebida(['gaseosa',['coca cola','sprite','fanta'],['McDonalds', 'KFC', 'Cuchara Oriental', 'Yong Xing', 'La Dolce Vita', 'Ragu']]).
-bebida(['coctel',['piña colada','margarita'],['Balcon Criollo', 'Rancho Los Coyotes', 'La Dolce Vita', 'Ragu']]).
+bebida(['gaseosa',['cocacola','sprite','fanta'],['McDonalds', 'KFC', 'Cuchara Oriental', 'Yong Xing', 'La Dolce Vita', 'Ragu']]).
+bebida(['coctel',['piñacolada','margarita'],['Balcon Criollo', 'Rancho Los Coyotes', 'La Dolce Vita', 'Ragu']]).
 bebida(['cerveza',['nacional','corona'],['Balcon Criollo', 'Rancho Los Coyotes']]).
 
 
@@ -180,8 +180,9 @@ bebida(['cerveza',['nacional','corona'],['Balcon Criollo', 'Rancho Los Coyotes']
 
 lugar(['Cartago',['McDonalds', 'Balcon Criollo', 'KFC']]).
 lugar(['cartago',['McDonalds', 'Balcon Criollo', 'KFC']]).
-lugar(['San Jose',['Balcon Criollo', 'Cuchara Oriental', 'Yong Xing', 'Samadhi', 'KFC', 'Rancho Los Coyotes']]).
-lugar(['san jose',['Balcon Criollo', 'Cuchara Oriental', 'Yong Xing', 'Samadhi', 'KFC', 'Rancho Los Coyotes']]).
+lugar(['SanJose',['Balcon Criollo', 'Cuchara Oriental', 'Yong Xing', 'Samadhi', 'KFC', 'Rancho Los Coyotes']]).
+ lugar(['sanjose',['Balcon Criollo', 'Cuchara Oriental', 'Yong Xing',
+ 'Samadhi', 'KFC', 'Rancho Los Coyotes']]).
 lugar(['Heredia',['Subway', 'KFC', 'La Dolce Vita', 'Ragu']]).
 lugar(['heredia',['Subway', 'KFC', 'La Dolce Vita', 'Ragu']]).
 
