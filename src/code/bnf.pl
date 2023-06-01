@@ -814,7 +814,7 @@ noun_phrase(Num, Gen, Prsn, S0, S) :-
     name_complement(Num, Gen, S1, S).
 
 noun_phrase(Num, Gen, Prsn, S0, S) :-
-   prepositional_phrase(S0, S).
+    prepositional_phrase(S0, S).
 
 noun_phrase(Num, Gen, Prsn, S0, S) :-
     determinant(Num, Gen, Prsn, S0, S1),
@@ -843,12 +843,12 @@ sentence(S0,S):-
 
 
 
-valid_sentence(S):-sentence(S, []).
+valid_sentence(S,V):-sentence(S, []),V=S.
 
-valid_sentence(S):-
+valid_sentence(S,V):-
     writeln('No entendi. Por favor, podria repetirlo?'),
     readln(S2),
-    valid_sentence(S2).
+    valid_sentence(S2,V).
 
 
 % :- initialization(test).

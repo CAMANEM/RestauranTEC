@@ -9,6 +9,7 @@
 restaurante([
     'McDonalds',
     'rapida',
+    '',
     'Cartago',
     '150 m sur del walmart de caballo blanco',
     ['Hamburguesa','Desayuno','Postre','Papas'],
@@ -135,12 +136,6 @@ restaurante([
      '6',
      'Verdadera comida guanacasteca, los esperamos']).
 
-/*
-
-restaurante([[balconCriollo,'Balcon Criollo'] ,tipica
-,['Cartago','Cartago'],'Costado este de la municipalidad enavenida
-central de Cartago',['Chifrijo','Casados','Olla de
-carne','Hamburguesas']]).*/
 
 % La informacion de que restaurantes tienen ciertas comidas tiene el
 % siguiente formato:
