@@ -25,8 +25,30 @@ adjectives(sing, fem, [fria|S], S).
 adjectives(plu, masc, [frios|S], S).
 adjectives(plu, fem, [frias|S], S).
 
+% bebidas
+
 adjectives(sing, _, [caliente|S], S).
 adjectives(plu, _, [calientes|S], S).
+adjectives(sing, fem, [natural|S],S).
+adjectives(sing, masc, [natural|S],S).
+adjectives(plu, fem, [naturales|S],S).
+adjectives(plu, masc, [naturales|S],S).
+adjectives(sing, fem, [gaseosa|S],S).
+adjectives(plu, fem, [gaseosas|S],S).
+
+% comidas
+adjectives(sing, fem, [rapida|S], S).
+adjectives(sing, fem, [italiana|S], S).
+adjectives(sing, fem, [china|S], S).
+adjectives(sing, fem, [saludable|S], S).
+adjectives(sing, fem, [tipica|S], S).
+
+
+% <><><><><><><><> Conjuction <><><><><><><><><>
+
+conjuction([y|S],S).
+conjuction([o|S],S).
+conjuction([u|S],S).
 
 % <><><><><><><><> prepositions <><><><><><><><><>
 
@@ -61,12 +83,41 @@ nameS(sing, masc, [hijo|S],S).
 nameS(sing, fem, [hija|S],S).
 nameS(plu, masc, [hijos|S],S).
 nameS(plu, fem, [hijas|S],S).
+nameS(sing, masc, [esposo|S],S).
+nameS(sing, fem, [esposa|S],S).
 
 nameS(sing, fem, [hamburguesa|S],S).
 nameS(plu, fem, [hamburguesas|S],S).
 
 
 nameS(plu, fem, [papas|S],S).
+
+% food
+nameS(sing, fem, [comida|S],S).
+
+% drinks
+nameS(sing, fem, [bebida|S],S).
+nameS(plu, fem, [bebidas|S],S).
+nameS(sing, masc, [fresco|S],S).
+nameS(plu, masc, [frescos|S],S).
+nameS(sing, masc, [refresco|S],S).
+nameS(plu, masc, [refrescos|S],S).
+
+nameS(sing, masc, [coctel|S],S).
+nameS(plu, masc, [cocteles|S],S).
+nameS(sing, fem, [gaseosa|S],S).
+nameS(plu, fem, [gaseosas|S],S).
+nameS(sing, fem, [cerveza|S],S).
+nameS(plu, fem, [cervezas|S],S).
+
+% locations
+
+nameS(sing, _, ['Cartago'|S],S).
+nameS(sing, _, [cartago|S],S).
+nameS(sing, _, ['SanJose'|S],S).
+nameS(sing, _, ['sanjose'|S],S).
+nameS(sing, _, ['Heredia'|S],S).
+nameS(sing, _, ['heredia'|S],S).
 
 % <><><><><><><><><> Verbs <><><><><><><><><><><>
 
@@ -463,6 +514,23 @@ verb(sing, thrd, [querria, comer|S],S).
 verb(plu, frst, [querriamos, comer|S],S).
 verb(plu, thrd, [querrian, comer|S],S).
 
+verb(sing, frst, [quiero, tomar|S],S).
+verb(sing, thrd, [quiere, tomar|S],S).
+verb(plu, frst, [queremos, tomar|S],S).
+verb(plu, thrd, [quieren, tomar|S],S).
+verb(sing, frst, [querre, tomar|S],S).
+verb(sing, thrd, [querra, tomar|S],S).
+verb(plu, frst, [querremos, tomar|S],S).
+verb(plu, thrd, [querran, tomar|S],S).
+verb(sing, frst, [queria, tomar|S],S).
+verb(sing, thrd, [queria, tomar|S],S).
+verb(plu, frst, [queriamos, tomar|S],S).
+verb(plu, thrd, [querian, tomar|S],S).
+verb(sing, frst, [querria, tomar|S],S).
+verb(sing, thrd, [querria, tomar|S],S).
+verb(plu, frst, [querriamos, tomar|S],S).
+verb(plu, thrd, [querrian, tomar|S],S).
+
 
 verb(sing, frst, [solicito|S],S).
 verb(sing, thrd, [solicita|S],S).
@@ -532,6 +600,23 @@ verb(sing, frst, [iria, a, comer|S],S).
 verb(sing, thrd, [iria, a, comer|S],S).
 verb(plu, frst, [iriamos, a, comer|S],S).
 verb(plu, thrd, [irian, a, comer|S],S).
+
+verb(sing, frst, [voy, a, tomar|S],S).
+verb(sing, thrd, [va, a, tomar|S],S).
+verb(plu, frst, [vamos, a, tomar|S],S).
+verb(plu, thrd, [van, a, tomar|S],S).
+verb(sing, frst, [ire, a, tomar|S],S).
+verb(sing, thrd, [ira, a, tomar|S],S).
+verb(plu, frst, [iremos, a, tomar|S],S).
+verb(plu, thrd, [iran, a, tomar|S],S).
+verb(sing, frst, [iba, a, tomar|S],S).
+verb(sing, thrd, [iba, a, tomar|S],S).
+verb(plu, frst, [ibamos, a, tomar|S],S).
+verb(plu, thrd, [iban, a, tomar|S],S).
+verb(sing, frst, [iria, a, tomar|S],S).
+verb(sing, thrd, [iria, a, tomar|S],S).
+verb(plu, frst, [iriamos, a, tomar|S],S).
+verb(plu, thrd, [irian, a, tomar|S],S).
 
 
 
@@ -667,7 +752,19 @@ noun_phrase(Num, Gen, Prsn, S0, S) :-
     nameS(Num, Gen, S1, S2),
     name_complement(Num, Gen, S2, S).
 
+noun_phrase(Num, Gen, Prsn, S0, S) :-
+    nameS(Num, Gen, S0, S1),
+    name_complement(Num, Gen, S1, S).
 
+noun_phrase(Num, Gen, Prsn, S0, S) :-
+    name_complement(_, _, S0, S1).
+
+noun_phrase(Num, Gen, Prsn, S0, S) :-
+    determinant(Num, Gen, Prsn, S0, S1),
+    nameS(Num, Gen, S1, S2),
+    conjuction(S2, S3),
+    determinant(Num2, Gen2, Prsn2, S3, S4),
+    nameS(Num2, Gen2, S4, S).
 
 % <><><><><><><><> Sentence <><><><><><><><><><><>
 
@@ -686,6 +783,15 @@ sentence(S0,S):-
 sentence(S0,S):-
     pronoun(Num, Prsn, S0, S1),
     verb_phrase(Num, Gen, Prsn, S1, S).
+
+
+
+valid_sentence(S):-sentence(S, []).
+
+valid_sentence(S):-
+    writeln('No entendi. Por favor, podria repetirlo?'),
+    readln(S2),
+    valid_sentence(S2).
 
 
 % :- initialization(test).
