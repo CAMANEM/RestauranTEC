@@ -9,7 +9,7 @@
 restaurante([
     'McDonalds',
     'rapida',
-    '',
+    'gaseosa',
     'Cartago',
     '150 m sur del walmart de caballo blanco',
     ['Hamburguesa','Desayuno','Postre','Papas'],
@@ -20,6 +20,7 @@ restaurante([
 restaurante([
      'Balcon Criollo',
      'tipica',
+     'caliente',
      'Cartago',
      'Diagonal a esquina Noroeste del Parque Central de Cartago',
      ['Casado','Prensada','Mondongo','Tortilla'],
@@ -29,11 +30,31 @@ restaurante([
 restaurante([
     'KFC',
     'rapida',
+    'gaseosa',
     'Cartago',
     'diagonal al mercado central, Av. 6',
     ['Hamburguesa','Desayuno','Postre','Papas'],
     '12',
     'El mejor pollo al mejor precio, aproveche']).
+
+restaurante([
+     'Il Palio',
+     'italiana',
+     'coctel',
+     'Cartago',
+     '100 metros sur de la Basílica de los ángeles',
+     ['Pizza','Spaghetti ','Lasagna','Gelato'],
+     '10',
+     '¡Coma sano, coma Italiano!']).
+restaurante([
+    'Wing Shun',
+    'china',
+    'gaseosa',
+    'Cartago',
+    'Se encuentra en la avenida 3',
+    ['Gyozas','Dumplings','Cantones','Tofu'],
+    '25',
+    'Somos una empresa familiar que busca ofrecer comida asiática de calidad y un buen servicio.']).
 
 
 % En Heredia:
@@ -41,6 +62,7 @@ restaurante([
 restaurante([
     'Subway',
     'saludable',
+    'natural',
     'Heredia',
     '500m oeste de la entrada principal del ITCR',
     ['Sandwich','Ensalada','Pasta','Falafel'],
@@ -50,6 +72,7 @@ restaurante([
 restaurante([
     'KFC',
     'rapida',
+    'gaseosa',
     'Heredia',
     'diagonal al mercado central, Av. 6',
     ['Hamburguesa','Desayuno','Postre','Papas'],
@@ -60,6 +83,7 @@ restaurante([
 restaurante([
      'La Dolce Vita',
      'italiana',
+     'coctel',
      'Heredia',
      '25 m. Este de la Casa Regional ANDE',
      ['Pizza','Spaghetti ','Lasagna','Gelato'],
@@ -69,6 +93,7 @@ restaurante([
 restaurante([
      'Ragu',
      'italiana',
+     'coctel',
      'Heredia',
      '25 m. Este de la esquina Sureste de la Iglesia Catolica de Alajuela',
      ['Pizza','Spaghetti ','Lasagna','Gelato'],
@@ -82,6 +107,7 @@ restaurante([
 restaurante([
      'Balcon Criollo',
      'tipica',
+     'caliente',
      'SanJose',
      'Diagonal a esquina Noroeste del Parque La Sabana',
      ['Casado','Prensada','Mondongo','Tortilla'],
@@ -92,6 +118,7 @@ restaurante([
 restaurante([
     'Cuchara Oriental',
     'china',
+    'gaseosa',
     'SanJose',
     'entre Av 16 y 14 sobre calle 11 Avenida Cleto González Víquez',
     ['Gyozas','Dumplings','Cantones','Tofu'],
@@ -101,6 +128,7 @@ restaurante([
 restaurante([
     'Yong Xing',
     'china',
+    'gaseosa',
     'SanJose',
     '100 mts oeste del Super Kion',
     ['Gyozas','Dumplings','Cantones','Tofu'],
@@ -111,6 +139,7 @@ restaurante([
 restaurante([
     'Samadhi',
     'saludable',
+    'natural',
     'SanJose',
     'Calle 35, entre ave 5 Y 7, Barrio Escalante',
     ['Sandwich','Ensalada','Pasta','Falafel'],
@@ -121,6 +150,7 @@ restaurante([
 restaurante([
     'KFC',
     'rapida',
+    'gaseosa',
     'SanJose',
     'diagonal al mercado central, Av. 6',
     ['Hamburguesa','Desayuno','Postre','Papas'],
@@ -130,6 +160,7 @@ restaurante([
 restaurante([
      'Rancho Los Coyotes',
      'tipica',
+     'caliente',
      'SanJose',
      '1.6 km al oeste, 100 m al sur del Parque Republica del Peru',
      ['Casado','Prensada','Mondongo','Tortilla'],
@@ -146,7 +177,7 @@ restaurante([
 
 
 
-comida(['rapida',['hamburguesa','papas','sandwich'],['McDonalds', 'KFC']]).
+comida(['rapida',['hamburguesa','papas','sandwich','postre'],['McDonalds', 'KFC']]).
 comida(['tipica',['casado','prensada','mondongo','tortilla'],['Balcon Criollo', 'Rancho Los Coyotes']]).
 comida(['saludable',['sandwich','ensalada','pasta','falafel'],['Samadhi', 'Subway']]).
 comida(['italiana',['pizza','spaghetti ','lasagna','gelato'],['La Dolce Vita', 'Ragu']]).
