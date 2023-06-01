@@ -25,6 +25,8 @@ adjectives(sing, fem, [fria|S], S).
 adjectives(plu, masc, [frios|S], S).
 adjectives(plu, fem, [frias|S], S).
 
+adjectives(plu, fem, [fritas|S], S).
+
 % bebidas
 
 adjectives(sing, _, [caliente|S], S).
@@ -35,6 +37,9 @@ adjectives(plu, fem, [naturales|S],S).
 adjectives(plu, masc, [naturales|S],S).
 adjectives(sing, fem, [gaseosa|S],S).
 adjectives(plu, fem, [gaseosas|S],S).
+
+adjectives(sing, fem, [nacional|S],S).
+adjectives(sing, fem, [corona|S],S).
 
 % comidas
 adjectives(sing, fem, [rapida|S], S).
@@ -89,11 +94,32 @@ nameS(sing, fem, [esposa|S],S).
 nameS(sing, fem, [hamburguesa|S],S).
 nameS(plu, fem, [hamburguesas|S],S).
 
-
-nameS(plu, fem, [papas|S],S).
-
 % food
 nameS(sing, fem, [comida|S],S).
+
+nameS(plu, fem, [papas|S],S).
+nameS(sing, masc, [postre|S],S).
+
+nameS(sing, masc, [casado|S],S).
+nameS(sing, masc, [mondongo|S],S).
+nameS(sing, fem, [prensada|S],S).
+nameS(sing, fem, [tortilla|S],S).
+
+nameS(sing, masc, [sandwich|S],S). % sinonimo
+nameS(sing, masc, [emparedado|S],S). % sinonimo
+nameS(sing, fem, [ensalada|S],S).
+nameS(sing, fem, [pasta|S],S).
+nameS(sing, masc, [falafel|S],S).
+
+nameS(sing, fem, [pizza|S],S).
+nameS(sing, masc, [spaguetti|S],S).
+nameS(sing, fem, [lasagna|S],S).
+nameS(sing, masc, [gelato|S],S).
+
+nameS(plu, fem, [gyozas|S],S).
+nameS(plu, masc, [dumplings|S],S).
+nameS(sing, masc, [cantones|S],S).
+nameS(sing, masc, [tofu|S],S).
 
 % drinks
 nameS(sing, fem, [bebida|S],S).
@@ -110,14 +136,45 @@ nameS(plu, fem, [gaseosas|S],S).
 nameS(sing, fem, [cerveza|S],S).
 nameS(plu, fem, [cervezas|S],S).
 
+nameS(sing, masc, [cas|S],S).
+nameS(sing, fem, [fresa|S],S).
+
+nameS(sing, masc, [cafe|S],S).
+nameS(sing, masc, [chocolate|S],S).
+nameS(sing, masc, [capuchino|S],S).
+
+nameS(sing, fem, [cocacola|S],S).
+nameS(sing, fem, [sprite|S],S).
+nameS(sing, fem, [fanta|S],S).
+
+nameS(sing, masc, [martini |S],S).
+nameS(sing, fem, [margarita|S],S).
+
+nameS(sing, fem, [nacional|S],S).
+nameS(sing, fem, [corona|S],S).
+
+
 % locations
 
 nameS(sing, _, ['Cartago'|S],S).
-nameS(sing, _, [cartago|S],S).
 nameS(sing, _, ['SanJose'|S],S).
-nameS(sing, _, ['sanjose'|S],S).
 nameS(sing, _, ['Heredia'|S],S).
-nameS(sing, _, ['heredia'|S],S).
+
+nameS(sing, _, ['McDonalds'|S],S).
+nameS(sing, _, ['KFC'|S],S).
+
+nameS(sing, _, ['Balcon Criollo'|S],S).
+nameS(sing, _, ['Rancho Los Coyotes'|S],S).
+
+nameS(sing, _, ['Samadhi'|S],S).
+nameS(sing, _, ['Subway'|S],S).
+
+nameS(sing, _, ['La Dolce Vita'|S],S).
+nameS(sing, _, ['Ragu'|S],S).
+
+nameS(sing, _, ['Cuchara Oriental'|S],S).
+nameS(sing, _, ['Yong Xing'|S],S).
+
 
 % <><><><><><><><><> Verbs <><><><><><><><><><><>
 
@@ -665,9 +722,9 @@ determinant(plu, fem, thrd, [nuestras|S], S).
 
 % <><><><><><><><> pronouns <><><><><><><><><>
 
-pronoun(sing, thrd, [oscar|S], S).
-pronoun(sing, thrd, [sebastian|S], S).
-pronoun(sing, thrd, [valerie|S], S).
+pronoun(sing, thrd, ['Oscar'|S], S).
+pronoun(sing, thrd, ['Sebastian'|S], S).
+pronoun(sing, thrd, ['Valerie'|S], S).
 pronoun(sing, thrd, [el| S], S).
 pronoun(sing, thrd, [ella| S], S).
 pronoun(plu, thrd, [ellos|S], S).
@@ -757,7 +814,7 @@ noun_phrase(Num, Gen, Prsn, S0, S) :-
     name_complement(Num, Gen, S1, S).
 
 noun_phrase(Num, Gen, Prsn, S0, S) :-
-    name_complement(_, _, S0, S1).
+   prepositional_phrase(S0, S).
 
 noun_phrase(Num, Gen, Prsn, S0, S) :-
     determinant(Num, Gen, Prsn, S0, S1),
@@ -801,4 +858,4 @@ test:-
     writeln('***************    RestauranTEC    ***************'),
     writeln('**************************************************'),
     writeln("Inserte una oracion para saber si esta es valida"),
-    readln(Ans), sentence(Ans,[]).
+    readln(Ans), valid_sentence(Ans).
