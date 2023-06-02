@@ -204,11 +204,11 @@ bebida(['cerveza',['nacional','corona'],['Balcon Criollo', 'Rancho Los Coyotes']
 
 
 
-lugar(['Cartago',['McDonalds', 'Balcon Criollo', 'KFC']]).
-lugar(['cartago',['McDonalds', 'Balcon Criollo', 'KFC']]).
-lugar(['SanJose',['Balcon Criollo', 'Cuchara Oriental', 'Yong Xing', 'Samadhi', 'KFC', 'Rancho Los Coyotes']]).
- lugar(['sanjose',['Balcon Criollo', 'Cuchara Oriental', 'Yong Xing',
- 'Samadhi', 'KFC', 'Rancho Los Coyotes']]).
-lugar(['Heredia',['Subway', 'KFC', 'La Dolce Vita', 'Ragu']]).
-lugar(['heredia',['Subway', 'KFC', 'La Dolce Vita', 'Ragu']]).
+lugar(['Cartago',['cartago'],['McDonalds', 'Balcon Criollo', 'KFC']]).
+%lugar(['cartago',['McDonalds', 'Balcon Criollo', 'KFC']]).
+lugar(['SanJose',['sanjose'],['Balcon Criollo', 'Cuchara Oriental', 'Yong Xing', 'Samadhi', 'KFC', 'Rancho Los Coyotes']]).
+% lugar(['sanjose',['Balcon Criollo', 'Cuchara Oriental', 'Yong Xing',
+% 'Samadhi', 'KFC', 'Rancho Los Coyotes']]).
+lugar(['Heredia',['heredia'],['Subway', 'KFC', 'La Dolce Vita', 'Ragu']]).
+%lugar([,['Subway', 'KFC', 'La Dolce Vita', 'Ragu']]).
 
