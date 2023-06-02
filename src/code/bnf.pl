@@ -175,6 +175,21 @@ nameS(sing, _, ['Ragu'|S],S).
 nameS(sing, _, ['Cuchara Oriental'|S],S).
 nameS(sing, _, ['Yong Xing'|S],S).
 
+% numbers
+nameS(_, _, S0,S):-
+    getFirst(S0, X),
+    isDigit(X),
+    getNext(S0, S).
+
+getFirst([FirstElement|_], FirstElement).
+getNext([_|Next], Next).
+
+isDigit(X) :-
+       number(X),
+       X >= 0.
+
+
+
 
 % <><><><><><><><><> Verbs <><><><><><><><><><><>
 
@@ -606,6 +621,23 @@ verb(sing, thrd, [solicitaria|S],S).
 verb(plu, frst, [solicitariamos|S],S).
 verb(plu, thrd, [solicitarian|S],S).
 
+verb(sing, frst, [soy|S],S).
+verb(sing, thrd, [es|S],S).
+verb(plu, frst, [somos|S],S).
+verb(plu, thrd, [son|S],S).
+verb(sing, frst, [sere|S],S).
+verb(sing, thrd, [sera|S],S).
+verb(plu, frst, [seremos|S],S).
+verb(plu, thrd, [seran|S],S).
+verb(sing, frst, [era|S],S).
+verb(sing, thrd, [era|S],S).
+verb(plu, frst, [eramos|S],S).
+verb(plu, thrd, [eran|S],S).
+verb(sing, frst, [seria|S],S).
+verb(sing, thrd, [seria|S],S).
+verb(plu, frst, [seriamos|S],S).
+verb(plu, thrd, [serian|S],S).
+
 
 verb(sing, frst, [tomo|S],S).
 verb(sing, thrd, [toma|S],S).
@@ -725,6 +757,7 @@ determinant(plu, fem, thrd, [nuestras|S], S).
 pronoun(sing, thrd, ['Oscar'|S], S).
 pronoun(sing, thrd, ['Sebastian'|S], S).
 pronoun(sing, thrd, ['Valerie'|S], S).
+pronoun(sing, thrd, ['Marco'|S], S).
 pronoun(sing, thrd, [el| S], S).
 pronoun(sing, thrd, [ella| S], S).
 pronoun(plu, thrd, [ellos|S], S).
@@ -858,4 +891,4 @@ test:-
     writeln('***************    RestauranTEC    ***************'),
     writeln('**************************************************'),
     writeln("Inserte una oracion para saber si esta es valida"),
-    readln(Ans), valid_sentence(Ans).
+    readln(Ans), valid_sentence(Ans, V).
