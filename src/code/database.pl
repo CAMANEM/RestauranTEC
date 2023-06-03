@@ -195,9 +195,9 @@ comida(['china',['gyozas','dumplings','cantones','tofu'],['Cuchara Oriental', 'Y
 
 
 bebida(['natural',['cas','fresa'],['Balcon Criollo', 'Rancho Los Coyotes', 'Samadhi', 'Subway', 'Cuchara Oriental', 'Yong Xing', 'La Dolce Vita', 'Ragu']]).
-bebida(['caliente',['café','chocolate','agua dulce'],['Balcon Criollo', 'Rancho Los Coyotes', 'Cuchara Oriental', 'Yong Xing']]).
+bebida(['caliente',['cafe','chocolate','capuchino'],['Balcon Criollo', 'Rancho Los Coyotes', 'Cuchara Oriental', 'Yong Xing']]).
 bebida(['gaseosa',['cocacola','sprite','fanta'],['McDonalds', 'KFC', 'Cuchara Oriental', 'Yong Xing', 'La Dolce Vita', 'Ragu']]).
-bebida(['coctel',['piñacolada','margarita'],['Balcon Criollo', 'Rancho Los Coyotes', 'La Dolce Vita', 'Ragu']]).
+bebida(['coctel',['martini','margarita'],['Balcon Criollo', 'Rancho Los Coyotes', 'La Dolce Vita', 'Ragu']]).
 bebida(['cerveza',['nacional','corona'],['Balcon Criollo', 'Rancho Los Coyotes']]).
 
 
