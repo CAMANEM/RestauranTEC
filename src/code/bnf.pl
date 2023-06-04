@@ -5,6 +5,8 @@
 :- style_check(-singleton).
 
 
+sign-->[];[.]. % sinonimos
+
 % <><><><><><><><> adjectives <><><><><><><><><>
 
 adjectives(sing, masc, [rico|S], S).
@@ -856,6 +858,9 @@ noun_phrase(Num, Gen, Prsn, S0, S) :-
     determinant(Num2, Gen2, Prsn2, S3, S4),
     nameS(Num2, Gen2, S4, S).
 
+noun_phrase(Num, Gen, Prsn, S0, S) :-
+    nameS(_, _, S0, S).
+
 % <><><><><><><><> Sentence <><><><><><><><><><><>
 
 /*
@@ -868,11 +873,13 @@ noun_phrase(Num, Gen, Prsn, S0, S) :-
 */
 sentence(S0,S):-
     noun_phrase(Num, Gen, Prsn, S0, S1),
-    verb_phrase(Num, Gen, Prsn, S1, S).
+    verb_phrase(Num, Gen, Prsn, S1, S2),
+    sign(S2, S).
 
 sentence(S0,S):-
     pronoun(Num, Prsn, S0, S1),
-    verb_phrase(Num, Gen, Prsn, S1, S).
+    verb_phrase(Num, Gen, Prsn, S1, S2),
+    sign(S2, S).
 
 
 
