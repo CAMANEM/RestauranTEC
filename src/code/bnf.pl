@@ -5,57 +5,57 @@
 :- style_check(-singleton).
 
 
-sign-->[];[.]. % sinonimos
+sign-->[];[.];[?]. % sinonimos
 
 % <><><><><><><><> adjectives <><><><><><><><><>
 
-adjectives(sing, masc, [rico|S], S).
-adjectives(sing, fem, [rica|S], S).
-adjectives(plu, masc, [ricos|S], S).
-adjectives(plu, fem, [ricas|S], S).
+adjective(sing, masc, [rico|S], S).
+adjective(sing, fem, [rica|S], S).
+adjective(plu, masc, [ricos|S], S).
+adjective(plu, fem, [ricas|S], S).
 
-adjectives(sing, masc, [pequeno|S], S).
-adjectives(sing, fem, [pequena|S], S).
-adjectives(plu, masc, [pequenos|S], S).
-adjectives(plu, fem, [pequenas|S], S).
+adjective(sing, masc, [pequeno|S], S).
+adjective(sing, fem, [pequena|S], S).
+adjective(plu, masc, [pequenos|S], S).
+adjective(plu, fem, [pequenas|S], S).
 
-adjectives(sing, _, [grande|S], S).
-adjectives(plu, _, [grandes|S], S).
+adjective(sing, _, [grande|S], S).
+adjective(plu, _, [grandes|S], S).
 
-adjectives(sing, masc, [frio|S], S).
-adjectives(sing, fem, [fria|S], S).
-adjectives(plu, masc, [frios|S], S).
-adjectives(plu, fem, [frias|S], S).
+adjective(sing, masc, [frio|S], S).
+adjective(sing, fem, [fria|S], S).
+adjective(plu, masc, [frios|S], S).
+adjective(plu, fem, [frias|S], S).
 
-adjectives(plu, fem, [fritas|S], S).
+adjective(plu, fem, [fritas|S], S).
 
 % bebidas
 
-adjectives(sing, _, [caliente|S], S).
-adjectives(plu, _, [calientes|S], S).
-adjectives(sing, fem, [natural|S],S).
-adjectives(sing, masc, [natural|S],S).
-adjectives(plu, fem, [naturales|S],S).
-adjectives(plu, masc, [naturales|S],S).
-adjectives(sing, fem, [gaseosa|S],S).
-adjectives(plu, fem, [gaseosas|S],S).
+adjective(sing, _, [caliente|S], S).
+adjective(plu, _, [calientes|S], S).
+adjective(sing, fem, [natural|S],S).
+adjective(sing, masc, [natural|S],S).
+adjective(plu, fem, [naturales|S],S).
+adjective(plu, masc, [naturales|S],S).
+adjective(sing, fem, [gaseosa|S],S).
+adjective(plu, fem, [gaseosas|S],S).
 
-adjectives(sing, fem, [nacional|S],S).
-adjectives(sing, fem, [corona|S],S).
+adjective(sing, fem, [nacional|S],S).
+adjective(sing, fem, [corona|S],S).
 
 % comidas
-adjectives(sing, fem, [rapida|S], S).
-adjectives(sing, fem, [italiana|S], S).
-adjectives(sing, fem, [china|S], S).
-adjectives(sing, fem, [saludable|S], S).
-adjectives(sing, fem, [tipica|S], S).
+adjective(sing, fem, [rapida|S], S).
+adjective(sing, fem, [italiana|S], S).
+adjective(sing, fem, [china|S], S).
+adjective(sing, fem, [saludable|S], S).
+adjective(sing, fem, [tipica|S], S).
 
 
 % <><><><><><><><> Conjuction <><><><><><><><><>
 
-conjuction([y|S],S).
-conjuction([o|S],S).
-conjuction([u|S],S).
+conjunction([y|S],S).
+conjunction([o|S],S).
+conjunction([u|S],S).
 
 % <><><><><><><><> prepositions <><><><><><><><><>
 
@@ -81,104 +81,107 @@ preposition([tras|S],S).
 
 % <><><><><><><><><> name/noun <><><><><><><><><><>
 
-nameS(sing, masc, [hombre|S],S).
-nameS(plu, masc, [hombres|S],S).
-nameS(sing, fem, [manzana|S],S).
-nameS(plu, fem, [manzanas|S],S).
+noun(sing, masc, [hombre|S],S).
+noun(plu, masc, [hombres|S],S).
+noun(sing, fem, [mujer|S],S).
+noun(plu, fem, [mujeres|S],S).
+noun(sing, fem, [manzana|S],S).
+noun(plu, fem, [manzanas|S],S).
 
-nameS(sing, masc, [hijo|S],S).
-nameS(sing, fem, [hija|S],S).
-nameS(plu, masc, [hijos|S],S).
-nameS(plu, fem, [hijas|S],S).
-nameS(sing, masc, [esposo|S],S).
-nameS(sing, fem, [esposa|S],S).
+noun(sing, masc, [hijo|S],S).
+noun(sing, fem, [hija|S],S).
+noun(plu, masc, [hijos|S],S).
+noun(plu, fem, [hijas|S],S).
+noun(sing, masc, [esposo|S],S).
+noun(sing, fem, [esposa|S],S).
 
-nameS(sing, fem, [hamburguesa|S],S).
-nameS(plu, fem, [hamburguesas|S],S).
+noun(sing, fem, [hamburguesa|S],S).
+noun(plu, fem, [hamburguesas|S],S).
 
 % food
-nameS(sing, fem, [comida|S],S).
+noun(sing, fem, [comida|S],S).
 
-nameS(plu, fem, [papas|S],S).
-nameS(sing, masc, [postre|S],S).
+noun(plu, fem, [papas|S],S).
+noun(sing, masc, [postre|S],S).
 
-nameS(sing, masc, [casado|S],S).
-nameS(sing, masc, [mondongo|S],S).
-nameS(sing, fem, [prensada|S],S).
-nameS(sing, fem, [tortilla|S],S).
+noun(sing, masc, [casado|S],S).
+noun(sing, masc, [mondongo|S],S).
+noun(sing, fem, [prensada|S],S).
+noun(sing, fem, [tortilla|S],S).
 
-nameS(sing, masc, [sandwich|S],S). % sinonimo
-nameS(sing, masc, [emparedado|S],S). % sinonimo
-nameS(sing, fem, [ensalada|S],S).
-nameS(sing, fem, [pasta|S],S).
-nameS(sing, masc, [falafel|S],S).
+noun(sing, masc, [sandwich|S],S). % sinonimo
+noun(sing, masc, [emparedado|S],S). % sinonimo
+noun(sing, fem, [ensalada|S],S).
+noun(sing, fem, [pasta|S],S).
+noun(sing, masc, [falafel|S],S).
 
-nameS(sing, fem, [pizza|S],S).
-nameS(sing, masc, [spaguetti|S],S).
-nameS(sing, fem, [lasagna|S],S).
-nameS(sing, masc, [gelato|S],S).
+noun(sing, fem, [pizza|S],S).
+noun(plu, fem, [pizzas|S],S).
+noun(sing, masc, [spaguetti|S],S).
+noun(sing, fem, [lasagna|S],S).
+noun(sing, masc, [gelato|S],S).
 
-nameS(plu, fem, [gyozas|S],S).
-nameS(plu, masc, [dumplings|S],S).
-nameS(sing, masc, [cantones|S],S).
-nameS(sing, masc, [tofu|S],S).
+noun(plu, fem, [gyozas|S],S).
+noun(plu, masc, [dumplings|S],S).
+noun(sing, masc, [cantones|S],S).
+noun(sing, masc, [tofu|S],S).
 
 % drinks
-nameS(sing, fem, [bebida|S],S).
-nameS(plu, fem, [bebidas|S],S).
-nameS(sing, masc, [fresco|S],S).
-nameS(plu, masc, [frescos|S],S).
-nameS(sing, masc, [refresco|S],S).
-nameS(plu, masc, [refrescos|S],S).
+noun(sing, fem, [bebida|S],S).
+noun(plu, fem, [bebidas|S],S).
+noun(sing, masc, [fresco|S],S).
+noun(plu, masc, [frescos|S],S).
+noun(sing, masc, [refresco|S],S).
+noun(plu, masc, [refrescos|S],S).
 
-nameS(sing, masc, [coctel|S],S).
-nameS(plu, masc, [cocteles|S],S).
-nameS(sing, fem, [gaseosa|S],S).
-nameS(plu, fem, [gaseosas|S],S).
-nameS(sing, fem, [cerveza|S],S).
-nameS(plu, fem, [cervezas|S],S).
+noun(sing, masc, [coctel|S],S).
+noun(plu, masc, [cocteles|S],S).
+noun(sing, fem, [gaseosa|S],S).
+noun(plu, fem, [gaseosas|S],S).
+noun(sing, fem, [cerveza|S],S).
+noun(plu, fem, [cervezas|S],S).
 
-nameS(sing, masc, [cas|S],S).
-nameS(sing, fem, [fresa|S],S).
+noun(sing, masc, [cas|S],S).
+noun(sing, fem, [fresa|S],S).
 
-nameS(sing, masc, [cafe|S],S).
-nameS(sing, masc, [chocolate|S],S).
-nameS(sing, masc, [capuchino|S],S).
+noun(sing, masc, [cafe|S],S).
+noun(sing, masc, [chocolate|S],S).
+noun(sing, masc, [capuchino|S],S).
 
-nameS(sing, fem, [cocacola|S],S).
-nameS(sing, fem, [sprite|S],S).
-nameS(sing, fem, [fanta|S],S).
+noun(sing, fem, [cocacola|S],S).
+noun(sing, fem, [sprite|S],S).
+noun(sing, fem, [fanta|S],S).
 
-nameS(sing, masc, [martini |S],S).
-nameS(sing, fem, [margarita|S],S).
+noun(sing, masc, [martini |S],S).
+noun(sing, fem, [margarita|S],S).
 
-nameS(sing, fem, [nacional|S],S).
-nameS(sing, fem, [corona|S],S).
+noun(sing, fem, [nacional|S],S).
+noun(sing, fem, [corona|S],S).
 
 
 % locations
 
-nameS(sing, _, ['Cartago'|S],S).
-nameS(sing, _, ['SanJose'|S],S).
-nameS(sing, _, ['Heredia'|S],S).
+noun(sing, _, ['Cartago'|S],S).
+noun(sing, _, ['SanJose'|S],S).
+noun(sing, _, ['Heredia'|S],S).
 
-nameS(sing, _, ['McDonalds'|S],S).
-nameS(sing, _, ['KFC'|S],S).
+noun(sing, _, ['McDonalds'|S],S).
+noun(sing, _, ['KFC'|S],S).
 
-nameS(sing, _, ['Balcon Criollo'|S],S).
-nameS(sing, _, ['Rancho Los Coyotes'|S],S).
+noun(sing, _, ['Balcon Criollo'|S],S).
+noun(sing, _, ['Rancho Los Coyotes'|S],S).
 
-nameS(sing, _, ['Samadhi'|S],S).
-nameS(sing, _, ['Subway'|S],S).
+noun(sing, _, ['Samadhi'|S],S).
+noun(sing, _, ['Subway'|S],S).
 
-nameS(sing, _, ['La Dolce Vita'|S],S).
-nameS(sing, _, ['Ragu'|S],S).
+noun(sing, _, ['La Dolce Vita'|S],S).
+noun(sing, _, ['Ragu'|S],S).
 
-nameS(sing, _, ['Cuchara Oriental'|S],S).
-nameS(sing, _, ['Yong Xing'|S],S).
+noun(sing, _, ['Cuchara Oriental'|S],S).
+noun(sing, _, ['Yong Xing'|S],S).
 
 % numbers
-nameS(_, _, S0,S):-
+noun(_, _, S0,S):-
     getFirst(S0, X),
     isDigit(X),
     getNext(S0, S).
@@ -777,7 +780,7 @@ pronoun(sing, frst, [yo|S], S).
 */
 prepositional_phrase(S0, S) :-
     preposition(S0, S1),
-    nameS(_, _, S1, S).
+    noun(_, _, S1, S).
 
 
 % <><><><><><><><> adjectival phrase <><><><><><><><><>
@@ -790,7 +793,7 @@ prepositional_phrase(S0, S) :-
     @param     S:  list of words remaining after the adjectival phrase
 */
 adjectival_phrase(Num, Gen, S0, S) :-
-    adjectives(Num, Gen, S0, S).
+    adjective(Num, Gen, S0, S).
 
 
 % <><><><><><><><> name complement <><><><><><><><><>
@@ -837,15 +840,15 @@ verb_phrase(Num, _, Prsn, S0, S) :-
 */
 noun_phrase(Num, Gen, Prsn, S0, S) :-
     determinant(Num, Gen, Prsn, S0, S1),
-    nameS(Num, Gen, S1, S).
+    noun(Num, Gen, S1, S).
 
 noun_phrase(Num, Gen, Prsn, S0, S) :-
     determinant(Num, Gen, Prsn, S0, S1),
-    nameS(Num, Gen, S1, S2),
+    noun(Num, Gen, S1, S2),
     name_complement(Num, Gen, S2, S).
 
 noun_phrase(Num, Gen, Prsn, S0, S) :-
-    nameS(Num, Gen, S0, S1),
+    noun(Num, Gen, S0, S1),
     name_complement(Num, Gen, S1, S).
 
 noun_phrase(Num, Gen, Prsn, S0, S) :-
@@ -853,13 +856,13 @@ noun_phrase(Num, Gen, Prsn, S0, S) :-
 
 noun_phrase(Num, Gen, Prsn, S0, S) :-
     determinant(Num, Gen, Prsn, S0, S1),
-    nameS(Num, Gen, S1, S2),
-    conjuction(S2, S3),
+    noun(Num, Gen, S1, S2),
+    conjunction(S2, S3),
     determinant(Num2, Gen2, Prsn2, S3, S4),
-    nameS(Num2, Gen2, S4, S).
+    noun(Num2, Gen2, S4, S).
 
 noun_phrase(Num, Gen, Prsn, S0, S) :-
-    nameS(_, _, S0, S).
+    noun(_, _, S0, S).
 
 % <><><><><><><><> Sentence <><><><><><><><><><><>
 
