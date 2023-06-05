@@ -11,10 +11,10 @@ restaurante([
     'rapida',
     ['gaseosa','caliente'],
     'Cartago',
-    '150 m sur del walmart de caballo blanco',
+    '150 m sur del walmart de Caballo Blanco',
     ['Hamburguesa','Desayuno','Postre','Papas','Pollo'],
      '30',
-     'Este es un restaurante para toda la familia, area de juego para ni�os']).
+     'Este es un restaurante para toda la familia, area de juego para ninnos']).
 
 
 restaurante([
@@ -22,7 +22,7 @@ restaurante([
      'tipica',
      ['caliente','coctel','cerveza','natural'],
      'Cartago',
-     'Diagonal a esquina Noroeste del Parque Central de Cartago',
+     'Diagonal a esquina Noroeste del Parque Central',
      ['Casado','Prensada','Mondongo','Tortilla'],
      '18',
      'Verdadera comida costarricense, los esperamos']).
@@ -32,7 +32,7 @@ restaurante([
     'rapida',
     ['gaseosa','caliente'],
     'Cartago',
-    'diagonal al mercado central, Av. 6',
+    'Diagonal al mercado central, Av. 6',
     ['Hamburguesa','Desayuno','Postre','Papas','Pollo'],
     '12',
     'El mejor pollo al mejor precio, aproveche']).
@@ -42,10 +42,10 @@ restaurante([
      'italiana',
      ['coctel','gaseosa','natural'],
      'Cartago',
-     '100 metros sur de la Bas�lica de los �ngeles',
+     '100 metros sur de la Basilica de los Angeles',
      ['Pizza','Spaghetti ','Lasagna','Gelato'],
      '10',
-     '�Coma sano, coma Italiano!']).
+     'Coma sano, coma Italiano!']).
 restaurante([
     'Wing Shun',
     'china',
@@ -54,7 +54,7 @@ restaurante([
     'Se encuentra en la avenida 3',
     ['Gyozas','Dumplings','Cantones','Tofu'],
     '25',
-    'Somos una empresa familiar que busca ofrecer comida asi�tica de calidad y un buen servicio.']).
+    'Somos una empresa familiar que busca ofrecer comida asiatica de calidad y un buen servicio.']).
 
 
 % En Heredia:
@@ -74,7 +74,7 @@ restaurante([
     'rapida',
     ['gaseosa','caliente'],
     'Heredia',
-    'diagonal al mercado central, Av. 6',
+    'Diagonal al mercado central, Av. 6',
     ['Hamburguesa','Desayuno','Postre','Papas','Pollo'],
     '12',
     'El mejor pollo al mejor precio, aproveche']).
@@ -120,7 +120,7 @@ restaurante([
     'china',
     ['gaseosa','natural'],
     'Alajuela',
-    'entre Av 16 y 14 sobre calle 11 Avenida Cleto Gonz�lez V�quez',
+    'Entre Av 16 y 14 sobre calle 11 Avenida Cleto Gonzalez Vazquez',
     ['Gyozas','Dumplings','Cantones','Tofu'],
     '35',
     'Le traemos los platillos mas exquisitos oriente hasta su mesa']).
@@ -152,7 +152,7 @@ restaurante([
     'rapida',
     ['gaseosa','caliente'],
     'Alajuela',
-    'diagonal al mercado central, Av. 6',
+    'Diagonal al city mall',
     ['Hamburguesa','Desayuno','Postre','Papas','Pollo'],
     '12',
     'El mejor pollo al mejor precio, aproveche']).
@@ -188,8 +188,7 @@ comida(['china',['gyozas','dumplings','cantones','tofu'],['Wing Shun','Cuchara O
 
 % La informacion sobre restaurantes que tienen ciertas bebidas tiene el
 % siguiente formato:
-% [(categoria),[(bebidas disponibles)], [(nombre de los restaurantes
-% disponibles)]]
+% [(categoria),[(bebidas disponibles)], [(nombre de los restaurantes disponibles)]]
 %
 % bebida(['',[],[]]).
 
@@ -201,14 +200,12 @@ bebida(['coctel',['martini','margarita','chilliguaro','mojito'],['Balcon Criollo
 bebida(['cerveza',['nacional','corona','heineken','guiness'],['Balcon Criollo', 'Rancho Los Coyotes']]).
 
 
-
-
+% La informacion sobre los lugares disponibles en la base de datos
+% siguiente formato:
+% [(Lugar),[(Lugar en minuscula)], [(nombre de los restaurantes disponibles)]]
 
 lugar(['Cartago',['cartago'],['McDonalds', 'Balcon Criollo', 'KFC']]).
-%lugar(['cartago',['McDonalds', 'Balcon Criollo', 'KFC']]).
 lugar(['Alajuela',['alajuela'],['Balcon Criollo', 'Cuchara Oriental', 'Yong Xing', 'Samadhi', 'KFC', 'Rancho Los Coyotes']]).
-% lugar(['alajuela',['Balcon Criollo', 'Cuchara Oriental', 'Yong Xing',
-% 'Samadhi', 'KFC', 'Rancho Los Coyotes']]).
 lugar(['Heredia',['heredia'],['Subway', 'KFC', 'La Dolce Vita', 'Ragu']]).
-%lugar([,['Subway', 'KFC', 'La Dolce Vita', 'Ragu']]).
+
 
