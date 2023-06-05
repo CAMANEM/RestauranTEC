@@ -1,0 +1,1 @@
+start:- writeln('Hola patri').
