@@ -15,6 +15,45 @@ question([que|S],S).
 question([cual|S],S).
 question([cuales|S],S).
 
+% <><><><><><><><> adverbs <><><><><><><><><>
+
+% place
+
+adverb([cerca|S], S).
+adverb([lejos|S], S).
+
+% TIME
+
+adverb([antes|S], S).
+adverb([luego|S], S).
+adverb([pronto|S], S).
+adverb([hoy|S], S).
+adverb([mañana|S], S).
+adverb([ahora|S], S).
+adverb([ahorita|S], S).
+
+% affirmation
+
+adverb([si|S], S).
+adverb([claro|S], S).
+adverb([tambien|S], S).
+
+
+% negation
+
+adverb([no|S], S).
+adverb([tampoco|S], S).
+adverb([ni|S], S).
+
+% doubt
+
+adverb([quiza|S], S).
+adverb([igual|S], S).
+adverb([posiblemente|S], S).
+adverb([probablemente|S], S).
+adverb([seguramente|S], S).
+adverb-->[].
+
 
 % <><><><><><><><> adjectives <><><><><><><><><>
 
@@ -833,8 +872,9 @@ pronoun(sing, frst, [yo|S], S).
     @param     S:  list of words remaining after the prepositional phrase
 */
 prepositional_phrase(S0, S) :-
-    preposition(S0, S1),
-    noun(_, _, S1, S).
+    adverb(S0, S1),
+    preposition(S1, S2),
+    noun(_, _, S2, S).
 
 
 % <><><><><><><><> adjectival phrase <><><><><><><><><>
@@ -878,8 +918,9 @@ name_complement(Num, Gen, S0, S) :-
     @param     S:  list of words remaining after the verb phrase ([])
 */
 verb_phrase(Num, _, Prsn, S0, S) :-
-    verb(Num, Prsn, S0, S1),
-    noun_phrase(_, _, _, S1, S).
+    adverb(S0, S1),
+    verb(Num, Prsn, S1, S2),
+    noun_phrase(_, _, _, S2, S).
 
 
 % <><><><><><><><> noun phrase <><><><><><><><><>
