@@ -19,7 +19,7 @@ RestauranTEC was developed as the second [project](docs/requirements.pdf) of the
 
 Example of a conversation with RestauranTEC:
 
-```prolog
+```
       RestauranTEC: Hola!!! ¿Qué se te antoja comer hoy?
       Usuario: Hoy quiero comer pizza.
       RestauranTEC: ¿Algún tipo de pizza especial?
