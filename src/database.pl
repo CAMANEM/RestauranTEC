@@ -9,18 +9,18 @@
 restaurante([
     'McDonalds',
     'rapida',
-    'gaseosa',
+    ['gaseosa','caliente'],
     'Cartago',
     '150 m sur del walmart de caballo blanco',
     ['Hamburguesa','Desayuno','Postre','Papas','Pollo'],
      '30',
-     'Este es un restaurante para toda la familia, area de juego para niños']).
+     'Este es un restaurante para toda la familia, area de juego para niï¿½os']).
 
 
 restaurante([
      'Balcon Criollo',
      'tipica',
-     'caliente',
+     ['caliente','coctel','cerveza','natural'],
      'Cartago',
      'Diagonal a esquina Noroeste del Parque Central de Cartago',
      ['Casado','Prensada','Mondongo','Tortilla'],
@@ -30,7 +30,7 @@ restaurante([
 restaurante([
     'KFC',
     'rapida',
-    'gaseosa',
+    ['gaseosa','caliente'],
     'Cartago',
     'diagonal al mercado central, Av. 6',
     ['Hamburguesa','Desayuno','Postre','Papas','Pollo'],
@@ -40,21 +40,21 @@ restaurante([
 restaurante([
      'Il Palio',
      'italiana',
-     'coctel',
+     ['coctel','gaseosa','natural'],
      'Cartago',
-     '100 metros sur de la Basílica de los ángeles',
+     '100 metros sur de la Basï¿½lica de los ï¿½ngeles',
      ['Pizza','Spaghetti ','Lasagna','Gelato'],
      '10',
-     '¡Coma sano, coma Italiano!']).
+     'ï¿½Coma sano, coma Italiano!']).
 restaurante([
     'Wing Shun',
     'china',
-    'gaseosa',
+    ['gaseosa','natural'],
     'Cartago',
     'Se encuentra en la avenida 3',
     ['Gyozas','Dumplings','Cantones','Tofu'],
     '25',
-    'Somos una empresa familiar que busca ofrecer comida asiática de calidad y un buen servicio.']).
+    'Somos una empresa familiar que busca ofrecer comida asiï¿½tica de calidad y un buen servicio.']).
 
 
 % En Heredia:
@@ -62,7 +62,7 @@ restaurante([
 restaurante([
     'Subway',
     'saludable',
-    'natural',
+    ['natural','caliente','gaseosa'],
     'Heredia',
     '500m oeste de la entrada principal del ITCR',
     ['Sandwich','Ensalada','Pasta','Falafel'],
@@ -72,7 +72,7 @@ restaurante([
 restaurante([
     'KFC',
     'rapida',
-    'gaseosa',
+    ['gaseosa','caliente'],
     'Heredia',
     'diagonal al mercado central, Av. 6',
     ['Hamburguesa','Desayuno','Postre','Papas','Pollo'],
@@ -83,7 +83,7 @@ restaurante([
 restaurante([
      'La Dolce Vita',
      'italiana',
-     'coctel',
+     ['coctel','gaseosa','natural'],
      'Heredia',
      '25 m. Este de la Casa Regional ANDE',
      ['Pizza','Spaghetti ','Lasagna','Gelato'],
@@ -93,7 +93,7 @@ restaurante([
 restaurante([
      'Ragu',
      'italiana',
-     'coctel',
+     ['caliente','gaseosa','natural'],
      'Heredia',
      '25 m. Este de la esquina Sureste de la Iglesia Catolica de Alajuela',
      ['Pizza','Spaghetti ','Lasagna','Gelato'],
@@ -107,7 +107,7 @@ restaurante([
 restaurante([
      'Balcon Criollo',
      'tipica',
-     'caliente',
+     ['caliente','coctel','cerveza','natural'],
      'SanJose',
      'Diagonal a esquina Noroeste del Parque La Sabana',
      ['Casado','Prensada','Mondongo','Tortilla'],
@@ -118,9 +118,9 @@ restaurante([
 restaurante([
     'Cuchara Oriental',
     'china',
-    'gaseosa',
+    ['gaseosa','natural'],
     'SanJose',
-    'entre Av 16 y 14 sobre calle 11 Avenida Cleto González Víquez',
+    'entre Av 16 y 14 sobre calle 11 Avenida Cleto Gonzï¿½lez Vï¿½quez',
     ['Gyozas','Dumplings','Cantones','Tofu'],
     '35',
     'Le traemos los platillos mas exquisitos oriente hasta su mesa']).
@@ -128,7 +128,7 @@ restaurante([
 restaurante([
     'Yong Xing',
     'china',
-    'gaseosa',
+    ['gaseosa','cerveza'],
     'SanJose',
     '100 mts oeste del Super Kion',
     ['Gyozas','Dumplings','Cantones','Tofu'],
@@ -139,7 +139,7 @@ restaurante([
 restaurante([
     'Samadhi',
     'saludable',
-    'natural',
+    ['natural','caliente'],
     'SanJose',
     'Calle 35, entre ave 5 Y 7, Barrio Escalante',
     ['Sandwich','Ensalada','Pasta','Falafel'],
@@ -150,7 +150,7 @@ restaurante([
 restaurante([
     'KFC',
     'rapida',
-    'gaseosa',
+    ['gaseosa','caliente'],
     'SanJose',
     'diagonal al mercado central, Av. 6',
     ['Hamburguesa','Desayuno','Postre','Papas','Pollo'],
@@ -160,7 +160,7 @@ restaurante([
 restaurante([
      'Rancho Los Coyotes',
      'tipica',
-     'caliente',
+     ['caliente','coctel','cerveza','natural'],
      'SanJose',
      '1.6 km al oeste, 100 m al sur del Parque Republica del Peru',
      ['Casado','Prensada','Mondongo','Tortilla'],
@@ -178,10 +178,10 @@ restaurante([
 
 
 comida(['rapida',['hamburguesa','papas','sandwich','postre','pollo'],['McDonalds', 'KFC']]).
-comida(['tipica',['casado','prensada','mondongo','tortilla'],['Balcon Criollo', 'Rancho Los Coyotes']]).
+comida(['tipica',['casado','prensada','mondongo','tortilla','chifrijo'],['Balcon Criollo', 'Rancho Los Coyotes']]).
 comida(['saludable',['sandwich','ensalada','pasta','falafel'],['Samadhi', 'Subway']]).
-comida(['italiana',['pizza','spaghetti ','lasagna','gelato'],['La Dolce Vita', 'Ragu']]).
-comida(['china',['gyozas','dumplings','cantones','tofu'],['Cuchara Oriental', 'Yong Xing']]).
+comida(['italiana',['pizza','spaghetti ','lasagna','gelato','calzone'],['La Dolce Vita', 'Ragu','il palio']]).
+comida(['china',['gyozas','dumplings','cantones','tofu'],['Wing Shun','Cuchara Oriental', 'Yong Xing']]).
 
 
 
@@ -194,11 +194,11 @@ comida(['china',['gyozas','dumplings','cantones','tofu'],['Cuchara Oriental', 'Y
 % bebida(['',[],[]]).
 
 
-bebida(['natural',['cas','fresa'],['Balcon Criollo', 'Rancho Los Coyotes', 'Samadhi', 'Subway', 'Cuchara Oriental', 'Yong Xing', 'La Dolce Vita', 'Ragu']]).
+bebida(['natural',['cas','fresa','limon','sandia'],['Balcon Criollo', 'Rancho Los Coyotes', 'Samadhi', 'Subway', 'Cuchara Oriental', 'Yong Xing', 'La Dolce Vita', 'Ragu']]).
 bebida(['caliente',['cafe','chocolate','capuchino'],['Balcon Criollo', 'Rancho Los Coyotes', 'Cuchara Oriental', 'Yong Xing']]).
-bebida(['gaseosa',['cocacola','sprite','fanta'],['McDonalds', 'KFC', 'Cuchara Oriental', 'Yong Xing', 'La Dolce Vita', 'Ragu']]).
-bebida(['coctel',['martini','margarita'],['Balcon Criollo', 'Rancho Los Coyotes', 'La Dolce Vita', 'Ragu']]).
-bebida(['cerveza',['nacional','corona'],['Balcon Criollo', 'Rancho Los Coyotes']]).
+bebida(['gaseosa',['cocacola','sprite','fanta','fresca'],['McDonalds', 'KFC', 'Cuchara Oriental', 'Yong Xing', 'La Dolce Vita', 'Ragu']]).
+bebida(['coctel',['martini','margarita','chilliguaro','mojito'],['Balcon Criollo', 'Rancho Los Coyotes', 'La Dolce Vita', 'Ragu']]).
+bebida(['cerveza',['nacional','corona','heineken','guiness'],['Balcon Criollo', 'Rancho Los Coyotes']]).
 
 
 
