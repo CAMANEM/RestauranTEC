@@ -5,7 +5,16 @@
 :- style_check(-singleton).
 
 
-sign-->[];[.];[?]. % sinonimos
+sign-->[];[.]. % sinonimos
+
+question_sign(['?'|S],S).
+
+% <><><><><><><><> Question words <><><><><><><><><>
+
+question([que|S],S).
+question([cual|S],S).
+question([cuales|S],S).
+
 
 % <><><><><><><><> adjectives <><><><><><><><><>
 
@@ -104,6 +113,7 @@ noun(plu, fem, [hamburguesas|S],S).
 
 % food
 noun(sing, fem, [comida|S],S).
+noun(plu, fem, [comidas|S],S).
 
 noun(plu, fem, [papas|S],S).
 noun(sing, masc, [postre|S],S).
@@ -744,6 +754,18 @@ verb(sing, thrd, [iria, a, tomar|S],S).
 verb(plu, frst, [iriamos, a, tomar|S],S).
 verb(plu, thrd, [irian, a, tomar|S],S).
 
+% question verbs
+
+verb(plu, thrd, [disponen|S],S).
+verb(plu, thrd, [hay|S],S).
+verb(plu, thrd, [ofrecen|S],S).
+verb(sing, thrd, [ofrece|S],S).
+verb(sing, thrd, [recomienda|S],S).
+verb(plu, thrd, [recomiendan|S],S).
+verb(plu, thrd, [tienen|S],S).
+verb(sing, thrd, [tiene|S],S).
+
+
 
 
 % <><><><><><><><> determiners <><><><><><><><><>
@@ -920,12 +942,29 @@ sentence(S0,S):-
     verb_phrase(Num, Gen, Prsn, S0, S1),
     sign(S1, S).
 
+% Questions
+
+sentence(S0,S):-
+    verb_phrase(Num, Gen, Prsn, S0, S1),
+    question_sign(S1, S).
+
+sentence(S0,S):-
+    question(S0, S1),
+    noun_phrase(Num, Gen, Prsn, S1, S2),
+    verb(_, _, S2, S3),
+    question_sign(S3, S).
 
 
+
+/*
+    Validates a sentence. If the sentence isnt valid, ask the user for another input
+    @param   S:  list of words forming the sentence
+    @param   V:  Valid sentence
+*/
 valid_sentence(S,V):-sentence(S, []),V=S.
 
 valid_sentence(S,V):-
-    writeln('No entendi. Por favor, podria repetirlo?'),
+    writeln('"No comprendo su solicitud. Por favor, intente escribirla de otra forma."'),
     readln(S2),
     valid_sentence(S2,V).
 
