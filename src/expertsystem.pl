@@ -12,22 +12,22 @@
 
 %   Obtiene todos los valores en la posicion X de un hecho en la base de
 %   datos y lo devuelve como una lista.
-getComidas(C):- findall(X,(comida([X,_,_])),C).
-getComidas2(C):-findall(X,(comida([_,X,_])),C).
+get_comidas(C):- findall(X,(comida([X,_,_])),C).
+get_comidas2(C):-findall(X,(comida([_,X,_])),C).
 
-getBebidas(B):- findall(X,(bebida([X,_,_])),B).
-getBebidas2(B):-findall(X,(bebida([_,X,_])),B).
+get_bebidas(B):- findall(X,(bebida([X,_,_])),B).
+get_bebidas2(B):-findall(X,(bebida([_,X,_])),B).
 
-getLugares(L):- findall(X,(lugar([X,_,_])),L).
-getLugares2(L):- findall(X,(lugar([_,X,_])),L).
+get_lugares(L):- findall(X,(lugar([X,_,_])),L).
+get_lugares2(L):- findall(X,(lugar([_,X,_])),L).
 
 %  Imprime en consola una lista de valores y una lista de subvalores si
 %  se encuentra disponible.
 
 
-printCategorie([L|N]):-  write("* "), write(L),nl,longitud(N,Len),( Len >= 1 ->printCategorie(N);!).
+print_categorie([L|N]):-  write("* "), write(L),nl,longitud(N,Len),( Len >= 1 ->print_categorie(N);!).
 
-printSubCategorie([L|N]):-  write(" + "), write(L),nl,longitud(N,Len),( Len >= 1 ->printSubCategorie(N);!).
+print_subcategorie([L|N]):-  write(" + "), write(L),nl,longitud(N,Len),( Len >= 1 ->print_subcategorie(N);!).
 
 
 %  revisa si un valor es miembro de una lista de listas, solo devuelve
@@ -66,27 +66,27 @@ isPregunta([H|_],Z):- (H == '?' -> Z=1) .
 isPregunta([_|N],Z):- isPregunta(N,Z) .
 
 
-is_comida(H,X,Z):- getComidas(Ca),getComidas2(Cb),miembro(H,Ca,Za),miembroList(H,Cb,Zb),(Za==1 ->X = H,Z=1;Zb==1 ->X = H,Z=1).
-is_comida([H|_],X,Z):- getComidas(Ca),getComidas2(Cb),miembro(H,Ca,Za),miembroList(H,Cb,Zb),(Za==1 ->X = H,Z=1;Zb==1 ->X = H,Z=1).
+is_comida(H,X,Z):- get_comidas(Ca),get_comidas2(Cb),miembro(H,Ca,Za),miembroList(H,Cb,Zb),(Za==1 ->X = H,Z=1;Zb==1 ->X = H,Z=1).
+is_comida([H|_],X,Z):- get_comidas(Ca),get_comidas2(Cb),miembro(H,Ca,Za),miembroList(H,Cb,Zb),(Za==1 ->X = H,Z=1;Zb==1 ->X = H,Z=1).
 is_comida([_|N],X,Z):-is_comida(N,X,Z).
 
 is_comida([],Z):- Z=0.
-is_comida([H|_],Z):- getComidas(Ca),getComidas2(Cb),miembro(H,Ca,Za),miembroList(H,Cb,Zb),(Za==1 ->Z=1,!;Zb==1 ->Z=1,!).
+is_comida([H|_],Z):- get_comidas(Ca),get_comidas2(Cb),miembro(H,Ca,Za),miembroList(H,Cb,Zb),(Za==1 ->Z=1,!;Zb==1 ->Z=1,!).
 is_comida([_|N],Z):-is_comida(N,Z).
 
 
-isBebida(H,X,Z):- getBebidas(Ca),getBebidas2(Cb),miembro(H,Ca,Za),miembroList(H,Cb,Zb),(Za==1 ->X = H,Z=1;Zb==1 ->X = H,Z=1).
-isBebida([H|_],X,Z):- getBebidas(Ca),getBebidas2(Cb),miembro(H,Ca,Za),miembroList(H,Cb,Zb),(Za==1 ->X = H,Z=1;Zb==1 ->X = H,Z=1).
+isBebida(H,X,Z):- get_bebidas(Ca),get_bebidas2(Cb),miembro(H,Ca,Za),miembroList(H,Cb,Zb),(Za==1 ->X = H,Z=1;Zb==1 ->X = H,Z=1).
+isBebida([H|_],X,Z):- get_bebidas(Ca),get_bebidas2(Cb),miembro(H,Ca,Za),miembroList(H,Cb,Zb),(Za==1 ->X = H,Z=1;Zb==1 ->X = H,Z=1).
 isBebida([_|N],X,Z):-isBebida(N,X,Z).
 
 isBebida([],Z):- Z = 0.
-isBebida([H|_],Z):-getBebidas(Ca),getBebidas2(Cb),miembro(H,Ca,Za),miembroList(H,Cb,Zb),(Za ==1 ->Z=1;Zb ==1 ->Z=1).
+isBebida([H|_],Z):-get_bebidas(Ca),get_bebidas2(Cb),miembro(H,Ca,Za),miembroList(H,Cb,Zb),(Za ==1 ->Z=1;Zb ==1 ->Z=1).
 isBebida([_|N],Z):-isBebida(N,Z).
 
 
-is_lugar(H,X,Z):- getLugares(Ca),getLugares2(Cb),miembro(H,Ca,Za),miembro(H,Cb,Zb),(Za==1 ->X = H,Z=1 ; Zb==1 ->X = H,Z=1).
+is_lugar(H,X,Z):- get_lugares(Ca),get_lugares2(Cb),miembro(H,Ca,Za),miembro(H,Cb,Zb),(Za==1 ->X = H,Z=1 ; Zb==1 ->X = H,Z=1).
 is_lugar([],Z):- Z=0.
-is_lugar([H|_],Z):-getLugares(Ca),getLugares2(Cb),miembro(H,Ca,Za),miembroList(H,Cb,Zb),(Za==1 ->Z=1,!;Zb==1 ->Z=1,!).
+is_lugar([H|_],Z):-get_lugares(Ca),get_lugares2(Cb),miembro(H,Ca,Za),miembroList(H,Cb,Zb),(Za==1 ->Z=1,!;Zb==1 ->Z=1,!).
 is_lugar([_|N],Z):- is_lugar(N,Z).
 
 
@@ -144,11 +144,11 @@ validate_amount([_|T],X):- validate_amount(T,X).
 
 
 validate_question([]):- nl,write('No entendí tu pregunta'),nl,writeln('Vuelva a intentarlo'),nl.
-validate_question([H|N]):-read_question(H,P),is_comida(N,Val,Z),(P == 1,Z==1 -> nl,write('Menu de comida: '),write(Val),nl,comida([Val,Menu,_]),printSubCategorie(Menu)),!.
-validate_question([H|N]):-read_question(H,P),is_comida(N,Z),(P==1,Z==0 -> nl,write('-Tenemos disponible: '),nl,getComidas(Cat),printCategorie(Cat)),!.
-validate_question([H|N]):-read_question(H,P),isBebida(N,Val,Z),( P == 2,Z==1 -> nl,write('Menu de bebida: '),write(Val),nl,bebida([Val,Menu,_]),printSubCategorie(Menu)),!.
-validate_question([H|_]):-isBebida(H,Val,Z),( Z==1 -> nl,write('Menu de bebida: '),write(Val),nl,bebida([Val,Menu,_]),printSubCategorie(Menu)),!.
-validate_question([H|N]):-read_question(H,P),isBebida(N,Z),(P == 2,Z==0 -> nl,write('Tenemos disponible: '),nl,getBebidas(Cat),printCategorie(Cat)),!.
+validate_question([H|N]):-read_question(H,P),is_comida(N,Val,Z),(P == 1,Z==1 -> nl,write('Menu de comida: '),write(Val),nl,comida([Val,Menu,_]),print_subcategorie(Menu)),!.
+validate_question([H|N]):-read_question(H,P),is_comida(N,Z),(P==1,Z==0 -> nl,write('-Tenemos disponible: '),nl,get_comidas(Cat),print_categorie(Cat)),!.
+validate_question([H|N]):-read_question(H,P),isBebida(N,Val,Z),( P == 2,Z==1 -> nl,write('Menu de bebida: '),write(Val),nl,bebida([Val,Menu,_]),print_subcategorie(Menu)),!.
+validate_question([H|_]):-isBebida(H,Val,Z),( Z==1 -> nl,write('Menu de bebida: '),write(Val),nl,bebida([Val,Menu,_]),print_subcategorie(Menu)),!.
+validate_question([H|N]):-read_question(H,P),isBebida(N,Z),(P == 2,Z==0 -> nl,write('Tenemos disponible: '),nl,get_bebidas(Cat),print_categorie(Cat)),!.
 validate_question([_|N]):-validate_question(N).
 
 read_question(H,Z):-  z = 0.
@@ -161,12 +161,12 @@ numberatom(Atom) :-
     catch(number_chars(_, Chs), error(syntax_error(_),_), false).
 
 % Revisa si un valor pertenece a la categoria principal o subcategoria
-checkSub(X,Y):- getComidas(Ca),miembroVal(X,Ca,Za,Val),(Za==1,Y = Val).
-checkSub(X,Y):- getBebidas(Ca),miembroVal(X,Ca,Za,Val),(Za==1,Y = Val).
-checkSub(X,Y):- getLugares(Ca),miembroVal(X,Ca,Za,Val),(Za==1,Y = Val).
-checkSub(X,Y):- getComidas2(Ca),miembroListVal(X,Ca,Za,Val),(Za==1,comida([Type,Val,_]) ), Y=Type.
-checkSub(X,Y):- getBebidas2(Ca),miembroListVal(X,Ca,Za,Val),(Za==1,bebida([Type,Val,_]) ), Y=Type.
-checkSub(X,Y):- getLugares2(Ca),miembroListVal(X,Ca,Za,Val),(Za==1,bebida([Type,Val,_]) ), Y=Type.
+checkSub(X,Y):- get_comidas(Ca),miembroVal(X,Ca,Za,Val),(Za==1,Y = Val).
+checkSub(X,Y):- get_bebidas(Ca),miembroVal(X,Ca,Za,Val),(Za==1,Y = Val).
+checkSub(X,Y):- get_lugares(Ca),miembroVal(X,Ca,Za,Val),(Za==1,Y = Val).
+checkSub(X,Y):- get_comidas2(Ca),miembroListVal(X,Ca,Za,Val),(Za==1,comida([Type,Val,_]) ), Y=Type.
+checkSub(X,Y):- get_bebidas2(Ca),miembroListVal(X,Ca,Za,Val),(Za==1,bebida([Type,Val,_]) ), Y=Type.
+checkSub(X,Y):- get_lugares2(Ca),miembroListVal(X,Ca,Za,Val),(Za==1,bebida([Type,Val,_]) ), Y=Type.
 
 
 
@@ -230,8 +230,8 @@ startES:-
     writeln("-¿En que zona está buscando el restaurante?"),
     nl,
     writeln("-Las zonas que cubrimos son: "),nl,
-    getLugares(Lug),
-    printCategorie(Lug),
+    get_lugares(Lug),
+    print_categorie(Lug),
     readln(Oracion3),
     valid_sentence(Oracion3,Oracionver3),
     validateInput(Oracionver3,Lugar),
