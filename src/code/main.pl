@@ -1,6 +1,8 @@
 :-consult('es').
 
-:- initialization(restauranTEC).
+:-style_check(-singleton).
+
+:- initialization((restauranTEC,fail;true)).
 
 restauranTEC:-
-    startES.
+    writeln("Escriba startES. para iniciar el programa").
