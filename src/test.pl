@@ -1,1 +1,1 @@
-start:- writeln('Hola patri').
+start:- writeln('Hola patricia').
