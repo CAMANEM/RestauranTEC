@@ -1,6 +1,7 @@
 # RestauranTEC
+
 <p align="center">
-  <img width="300" height="300" src="src/assets/logo.png">
+  <img width="300" height="300" src="docs/logo.png">
 </p>
 
 <p align="center">
@@ -14,10 +15,11 @@
 ## Description
 This is an expert system that generates restaurant recommendations based on the preferences given by the user. It is completely made with prolog using logical programming paradigm. 
 
-RestauranTEC was developed as the [homework #2](docs/Tarea2%20GR01.pdf) assigned for the CE3104 "Compiler and Interpreter Languages" course of the <a href="https://www.tec.ac.cr/programas-academicos/licenciatura-ingenieria-computadores">Computer Engineering</a> career, <a href="https://www.tec.ac.cr">Instituto Tecnológico de Costa Rica</a>. 
+RestauranTEC was developed as the second [project](docs/requirements.pdf) of the CE3104 "Compiler and Interpreter Languages" course of the <a href="https://www.tec.ac.cr/programas-academicos/licenciatura-ingenieria-computadores">Computer Engineering</a> career, <a href="https://www.tec.ac.cr">Instituto Tecnológico de Costa Rica</a>. 
 
 Example of a conversation with RestauranTEC:
 
+```prolog
       RestauranTEC: Hola!!! ¿Qué se te antoja comer hoy?
       Usuario: Hoy quiero comer pizza.
       RestauranTEC: ¿Algún tipo de pizza especial?
@@ -30,6 +32,7 @@ Example of a conversation with RestauranTEC:
       entrada principal de la Universidad de Costa Rica.
       Su reservación ha sido tramitada.
       Recuerde: No se permiten mascotas. La vestimenta es formal.
+```
 
 ## Requisites
 
@@ -38,8 +41,4 @@ Example of a conversation with RestauranTEC:
 
 ## How to use?
 
-For a detailed guide of how to use this program you can see the [User's Manual](docs/) or the [documentation](docs/) if you want to know more about how this program works.
-
-
-  
- 
+For a detailed guide of how to use this program you can see the [user's manual](docs/user_manual.pdf) or the [technical documentation](docs/technical_doc.pdf) if you want to know more about how this program works.
