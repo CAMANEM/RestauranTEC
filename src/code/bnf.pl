@@ -50,6 +50,10 @@ adjective(sing, fem, [china|S], S).
 adjective(sing, fem, [saludable|S], S).
 adjective(sing, fem, [tipica|S], S).
 
+% for n person
+
+adjective(sing, _, [persona|S], S).
+adjective(plu, _, [personas|S], S).
 
 % <><><><><><><><> Conjuction <><><><><><><><><>
 
@@ -181,17 +185,45 @@ noun(sing, _, ['Cuchara Oriental'|S],S).
 noun(sing, _, ['Yong Xing'|S],S).
 
 % numbers
-noun(_, _, S0,S):-
+/*
+    Validates if the noun is a number higher than zero and clasifies it as singular (1) or plural (1<)
+    and returns the rest of the list without the number
+    @param   Num:  number form (singular or plural)
+    @param    S0:  list with the number
+    @param     S:  rest of the list without the number
+*/
+noun(Num, _, S0,S):-
     getFirst(S0, X),
-    isDigit(X),
+    isDigit(Num,X),
     getNext(S0, S).
 
+/*
+    Gets the first element of a given list
+    @param   [FirstElement|_]:  a not empty list
+    @param        FirsElement:  first element of the given list
+*/
 getFirst([FirstElement|_], FirstElement).
+
+/*
+    Returns a list without its first Element
+    @param    [_|Next]:  a not empty list
+    @param        Next:  rest of the list without the first element
+*/
 getNext([_|Next], Next).
 
-isDigit(X) :-
+
+/*
+    Validates if the noun is a number higher than zero and clasifies it as singular (1) or plural (1<)
+    @param   Num:  number form (singular or plural)
+    @param     X:  value to validate
+*/
+isDigit(Num, X) :-
        number(X),
-       X >= 0.
+       (X == 1 -> Num = 'sing').
+
+isDigit(Num, X) :-
+       number(X),
+       (X > 1 -> Num = 'plu').
 
 
 
@@ -883,6 +915,10 @@ sentence(S0,S):-
     pronoun(Num, Prsn, S0, S1),
     verb_phrase(Num, Gen, Prsn, S1, S2),
     sign(S2, S).
+
+sentence(S0,S):-
+    verb_phrase(Num, Gen, Prsn, S0, S1),
+    sign(S1, S).
 
 
 
