@@ -1,1 +1,0 @@
-start:- writeln('Hola patricia').
