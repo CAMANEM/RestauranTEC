@@ -28,7 +28,7 @@ adverb([antes|S], S).
 adverb([luego|S], S).
 adverb([pronto|S], S).
 adverb([hoy|S], S).
-adverb([mañana|S], S).
+adverb([manana|S], S).
 adverb([ahora|S], S).
 adverb([ahorita|S], S).
 

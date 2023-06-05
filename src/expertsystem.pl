@@ -115,21 +115,21 @@ validate_input(Oracion,X):- is_amount(Oracion,Val),(Val ==1 -> validate_amount(O
 
 % valida si la entrada del usuario es una comida disponible en la base
 % de datos, devuelve su valor revisado
-validate_comida([],X):- nl,writeln('La comida que quiere no estÃ¡ disponible'),nl,writeln('Vuelva a intentarlo'),nl, readln(Input),validate_comida(Input,X).
+validate_comida([],X):- nl,writeln('La comida que quiere no esta disponible'),nl,writeln('Vuelva a intentarlo'),nl, readln(Input),validate_comida(Input,X).
 validate_comida([H|_],X):- is_comida(H,Val,Z),(Z==1 -> X=Val ,!).
 validate_comida([H|T],X):- validate_comida(T,X).
 
 
 % valida si la entrada del usuario es una bebida disponible en la base
 % de datos, devuelve su valor revisado
-validate_bebida([],X):- nl,writeln('La bebida que quiere no estÃ¡ disponible'),nl,writeln('Vuelva a intentarlo'),nl, readln(Input),valid_sentence(Input,InputVal),validate_bebida(InputVal,X).
+validate_bebida([],X):- nl,writeln('La bebida que quiere no esta disponible'),nl,writeln('Vuelva a intentarlo'),nl, readln(Input),valid_sentence(Input,InputVal),validate_bebida(InputVal,X).
 validate_bebida([H|_],X):-  is_bebida(H,Val,Z),(Z==1 -> X=Val ,!).
 validate_bebida([H|T],X):- validate_bebida(T,X).
 
 
 % valida si la entrada del usuario es un lugar disponible en la base
 % de datos, devuelve su valor revisado
-validate_lugar([],X):- nl,writeln('El lugar que quiere no estÃ¡ disponible'),nl,writeln('Vuelva a intentarlo'),nl, readln(Input),valid_sentence(Input,InputVal),validate_lugar(InputVal,X).
+validate_lugar([],X):- nl,writeln('El lugar que quiere no esta disponible'),nl,writeln('Vuelva a intentarlo'),nl, readln(Input),valid_sentence(Input,InputVal),validate_lugar(InputVal,X).
 validate_lugar([H|_],X):- is_place(H,Val,Z),(Z==1 -> X=Val,!).
 validate_lugar([_|T],X):- validate_lugar(T,X).
 
@@ -140,7 +140,7 @@ validate_amount([H|_],X):- (numberatom(H) -> X = H ,!).
 validate_amount([_|T],X):- validate_amount(T,X).
 
 
-validate_question([]):- nl,write('No entendÃ­ tu pregunta'),nl,writeln('Vuelva a intentarlo'),nl.
+validate_question([]):- nl,write('No entendi su pregunta'),nl,writeln('Vuelva a intentarlo'),nl.
 validate_question([H|N]):-read_question(H,P),is_comida(N,Val,Z),(P == 1,Z==1 -> nl,write('Menu de comida: '),write(Val),nl,comida([Val,Menu,_]),print_subcategorie(Menu)),!.
 validate_question([H|N]):-read_question(H,P),is_comida(N,Z),(P==1,Z==0 -> nl,write('-Tenemos disponible: '),nl,get_comidas(Cat),print_categorie(Cat)),!.
 validate_question([H|N]):-read_question(H,P),is_bebida(N,Val,Z),( P == 2,Z==1 -> nl,write('Menu de bebida: '),write(Val),nl,bebida([Val,Menu,_]),print_subcategorie(Menu)),!.
@@ -198,36 +198,37 @@ search_restaurant(TipoComida,TipoBebida,Lugar,Capacidad):-
 
 
 
-recomendar_rest(Nombre,Lugar,Ubicacion,Menu,Indicaciones):- nl, write('-¡Encontramos un restaurante ideal!'),nl,write('-Su nombre es: '), write(Nombre),nl,write('-Se ubica en: '),write(Ubicacion),write(' de '),write(Lugar),nl,write('-Un comentario del restaurante: '),write(Indicaciones),nl,nl,ask_again().
+recomendar_rest(Nombre,Lugar,Ubicacion,Menu,Indicaciones):- nl, write('Encontramos un restaurante ideal!'),nl,write('-Su nombre es: '), write(Nombre),nl,write('-Se ubica en: '),write(Ubicacion),write(' de '),write(Lugar),nl,write('-Un comentario del restaurante: '),write(Indicaciones),nl,nl,ask_again().
 
 
 % Pregunta al usuario si quiere volver a correr el programa.
 ask_again(Response):- member('Si',Response,Z),(Z==1 -> startES).
 ask_again(Response):- member('Si',Response,Z),(Z==0 -> !).
-ask_again():-write('Â¿Desea volver a buscar?'),nl,write('Si / No'),nl,readln(Response),ask_again(Response).
+ask_again():-write('Desea volver a buscar?'),nl,write('Si / No'),nl,readln(Response),ask_again(Response).
 
 
-printAyuda():-nl,write('-¡Este es el menu de ayuda!'),nl,write('Puede hacerle preguntas a RestauranTEC como: '),nl,write('-"que (comidas/bebidas) tienen?"'),nl,write('-"que tipo de (comida/bebida) (especifico[a]) tienen?"').
+printAyuda():-nl,write('-Este es el menu de ayuda!'),nl,write('Puede hacerle preguntas a RestauranTEC como: '),nl,write('-"que (comidas/bebidas) tienen?"'),nl,write('-"que tipo de (comida/bebida) (especifico[a]) tienen?"').
 
 
 
 %                      Inicia el sistema experto
 startES:-
     writeln('
-┌───── •✧✧• ─────┐
- -RestauranTEC-
-└───── •✧✧• ─────┘'),
+ _________________________________________
+|                                         |
+|             -RestauranTEC-              |
+|_________________________________________|'),nl,
 
-    writeln('-Hola, ¡Bienvenido a RestauranTEC!'),
+    writeln('-Hola, Bienvenido a RestauranTEC!'),
     nl,writeln('-Para pedir informacion puede escribir "ayuda" '),nl,
-    writeln("-¿que tipo de comida se te antoja?"),nl,
+    writeln("-que tipo de comida se te antoja?"),nl,
     readln(Oracion1),
     valid_sentence(Oracion1,Oracionver),
     validate_input(Oracionver,TipoComida),
     %nl,write('comida ingresada: '),write(TipoComida),nl,
 
 
-    writeln("-¿que tipo de bebida desea tomar?"),
+    writeln("-que tipo de bebida desea tomar?"),
     nl,
     readln(Oracion2),
     valid_sentence(Oracion2,Oracionver2),
@@ -235,7 +236,7 @@ startES:-
     %nl,write('bebida ingresada: '),write(TipoBebida),nl,
 
 
-    writeln("-¿En que zona esta buscando el restaurante?"),
+    writeln("-En que zona esta buscando el restaurante?"),
     nl,
     writeln("-Las zonas que cubrimos son: "),nl,
     get_lugares(Lug),
@@ -246,7 +247,7 @@ startES:-
     %nl,write('lugar ingresado: '),write(Lugar),nl,
 
 
-    writeln('-¿Cuantas personas van a asistir?'),nl,
+    writeln('-Cuantas personas van a asistir?'),nl,
     readln(Cantidad),
     valid_sentence(Cantidad,Cantidadver),
     validate_input(Cantidadver,CantidadVal),
