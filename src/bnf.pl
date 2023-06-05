@@ -242,23 +242,23 @@ noun(sing, _, ['Yong Xing'|S],S).
     @param     S:  rest of the list without the number
 */
 noun(Num, _, S0,S):-
-    getFirst(S0, X),
-    isDigit(Num,X),
-    getNext(S0, S).
+    get_first(S0, X),
+    is_digit(Num,X),
+    get_next(S0, S).
 
 /*
     Gets the first element of a given list
     @param   [FirstElement|_]:  a not empty list
     @param        FirsElement:  first element of the given list
 */
-getFirst([FirstElement|_], FirstElement).
+get_first([FirstElement|_], FirstElement).
 
 /*
     Returns a list without its first Element
     @param    [_|Next]:  a not empty list
     @param        Next:  rest of the list without the first element
 */
-getNext([_|Next], Next).
+get_next([_|Next], Next).
 
 
 /*
@@ -266,11 +266,11 @@ getNext([_|Next], Next).
     @param   Num:  number form (singular or plural)
     @param     X:  value to validate
 */
-isDigit(Num, X) :-
+is_digit(Num, X) :-
        number(X),
        (X == 1 -> Num = 'sing').
 
-isDigit(Num, X) :-
+is_digit(Num, X) :-
        number(X),
        (X > 1 -> Num = 'plu').
 
@@ -998,17 +998,31 @@ sentence(S0,S):-
 
 
 /*
-    Validates a sentence. If the sentence isnt valid, ask the user for another input
+    Validates a sentence. If the sentence isnt valid, ask the user for another input.
+    Also checks if the user wants to close the program
     @param   S:  list of words forming the sentence
     @param   V:  Valid sentence
 */
 valid_sentence(S,V):-sentence(S, []),V=S.
+
+% Checks if the user wants to close the program
+valid_sentence(S,V):-is_end(S,Val),(Val ==1 ->halt()).
 
 valid_sentence(S,V):-
     writeln('"No comprendo su solicitud. Por favor, intente escribirla de otra forma."'),
     readln(S2),
     valid_sentence(S2,V).
 
+
+
+/*
+    Checks if the user is asking for help / or close the program / or if the the list command is empty
+    @param  [] :  empty list / or user command / or end of list
+    @param   Z :  a value depending of the user command
+*/
+is_end([],Z):- Z=0.
+is_end([H|_],Z):-(H=='adios' -> Z=1,!;H=='Ayuda' -> z=1,!).
+is_end([_|N],Z):- is_end(N,Z).
 
 % :- initialization(test).
 

@@ -100,9 +100,6 @@ isAyuda([H|_],Z):- (H=='ayuda' -> Z=1,!;H=='Ayuda' -> z=1,!).
 isAyuda([_|N],Z):- isAyuda(N,Z).
 
 
-is_end([],Z):- Z=0.
-is_end([H|_],Z):-(H=='adios' -> Z=1,!;H=='Ayuda' -> z=1,!).
-is_end([_|N],Z):- is_end(N,Z).
 
 %
 %
