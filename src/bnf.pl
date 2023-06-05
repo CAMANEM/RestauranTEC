@@ -88,6 +88,7 @@ adjective(plu, fem, [naturales|S],S).
 adjective(plu, masc, [naturales|S],S).
 adjective(sing, fem, [gaseosa|S],S).
 adjective(plu, fem, [gaseosas|S],S).
+adjective(sing, _, [caliente|S],S).
 
 adjective(sing, fem, [nacional|S],S).
 adjective(sing, fem, [corona|S],S).
@@ -163,6 +164,7 @@ noun(sing, masc, [casado|S],S).
 noun(sing, masc, [mondongo|S],S).
 noun(sing, fem, [prensada|S],S).
 noun(sing, fem, [tortilla|S],S).
+noun(sing, masc, [chifrijo|S],S).
 
 noun(sing, masc, [sandwich|S],S). % sinonimo
 noun(sing, masc, [emparedado|S],S). % sinonimo
@@ -175,6 +177,7 @@ noun(plu, fem, [pizzas|S],S).
 noun(sing, masc, [spaguetti|S],S).
 noun(sing, fem, [lasagna|S],S).
 noun(sing, masc, [gelato|S],S).
+noun(sing, _, [calzone|S],S).
 
 noun(plu, fem, [gyozas|S],S).
 noun(plu, masc, [dumplings|S],S).
@@ -188,6 +191,7 @@ noun(sing, masc, [fresco|S],S).
 noun(plu, masc, [frescos|S],S).
 noun(sing, masc, [refresco|S],S).
 noun(plu, masc, [refrescos|S],S).
+noun(sing, masc, [batido|S],S).
 
 noun(sing, masc, [coctel|S],S).
 noun(plu, masc, [cocteles|S],S).
@@ -198,6 +202,7 @@ noun(plu, fem, [cervezas|S],S).
 
 noun(sing, masc, [cas|S],S).
 noun(sing, fem, [fresa|S],S).
+noun(sing, fem, [sandia|S],S).
 
 noun(sing, masc, [cafe|S],S).
 noun(sing, masc, [chocolate|S],S).
@@ -206,12 +211,21 @@ noun(sing, masc, [capuchino|S],S).
 noun(sing, fem, [cocacola|S],S).
 noun(sing, fem, [sprite|S],S).
 noun(sing, fem, [fanta|S],S).
+noun(sing, fem, [fresca|S],S).
+
 
 noun(sing, masc, [martini |S],S).
 noun(sing, fem, [margarita|S],S).
+noun(sing, masc, [chilliguaro|S],S).
+noun(sing, masc, [mojito|S],S).
 
 noun(sing, fem, [nacional|S],S).
 noun(sing, fem, [corona|S],S).
+noun(sing, fem, [heineken|S],S).
+noun(sing, masc, [guiness|S],S).
+
+noun(sing, _, [agua|S],S).
+noun(sing, _, [leche|S],S).
 
 
 % locations
@@ -912,6 +926,9 @@ adjectival_phrase(Num, Gen, S0, S) :-
 name_complement(Num, Gen,S0, S) :-
     prepositional_phrase(S0, S).
 
+name_complement(Num, Gen,S0, S) :-
+    adjectival_phrase(Num, Gen, S0, S1),
+    prepositional_phrase(S1, S).
 
 
 name_complement(Num, Gen, S0, S) :-
