@@ -12,8 +12,11 @@
 
 
 
-%   Obtiene todos los valores en la posicion X de un hecho en la base de
-%   datos y lo devuelve como una lista.
+/*
+    Takes all the specific values of a statement and returns them on a list.
+    The second function does the same but with other specific values.
+    @param      C:  list with all the specific values of a statement.
+*/
 get_comidas(C):- findall(X,(comida([X,_,_])),C).
 get_comidas2(C):-findall(X,(comida([_,X,_])),C).
 
@@ -26,58 +29,92 @@ get_lugares2(L):- findall(X,(lugar([_,X,_])),L).
 
 
 
-%  Imprime en consola una lista de valores y una lista de subvalores si
-%  se encuentra disponible.
-
-
+/*
+    Prints a list on the terminal with a small format, * for principal categories.
+    @param          List:   List with all the values to be printed.
+*/
 print_categorie([L|N]):-  write('*'), write(L),nl,longitud(N,Len),( Len >= 1 ->print_categorie(N);!).
+
+/*
+    Prints a list on the terminal with a small format, + for sub categories.
+    @param          List:   List with all the values to be printed.
+*/
 print_subcategorie([L|N]):-  write(' + '), write(L),nl,longitud(N,Len),( Len >= 1 ->print_subcategorie(N);!).
 
 
 
 
 
-%  revisa si un valor es miembro de una lista de listas, solo devuelve
-%  su veracidad.
+/*
+    This function checks if an input is a member of a given list and returns a boolean.
+    @param        X:  input as an atom sent by the user.
+    @param        List:  List of lists to check if the input is member.
+    @param        Z:  Boolean, true if the input is part of the list, false if not.
+
+*/
 member_list(H,[],Z):- Z=0 .
 member_list(H,[C|_],Z):- member(H,C,Z),(Z==1 ->!).
 member_list(H,[_|R],Z):- member_list(H,R,Z).
+/*
+    This function checks if an input is a member of a given list and returns a boolean.
+    @param        X:  input as an atom sent by the user.
+    @param        List:  List to check if the input is a member.
+    @param        Z:  Boolean, true if the input is part of the list, false if not.
 
-
-%  funcion member para revisar si pertenece a una lista, devuelve su
-%  veracidad
+*/
 member(X,[],Z):- Z = 0.
 member(X,[Y|_],Z):- (X == Y -> Z = 1,!).
 member(X,[_|R],Z):- member(X,R,Z).
 
 
-%  Revisa si un valor es miembro de una lista de listas, devuelve su
-%  veracidad y el valor  revisado.
+/*
+    This function checks if an input is a member of a given list and returns a boolean.
+    @param        X:  input as an atom sent by the user.
+    @param        List:  List of lists to check if the input is a member.
+    @param        Z:  Boolean, true if the input is part of the list, false if not.
+    @param        Val:  Checked value if the input was a member of the list.
+
+*/
 member_listVal(H,[],Z,Val):- Z=0 .
 member_listVal(H,[C|_],Z,Val):- member(H,C,Z),(Z==1 ->Val=C,!) .
 member_listVal(H,[_|R],Z,Val):- member_listVal(H,R,Z,Val).
 
-%  funcion miembro para revisar si pertenece a una lista, devuelve su
-%  veracidad y valor revisado.
+/*
+    This function checks if an input is a member of a given list and returns a boolean and the checked value.
+    @param        X:  input as an atom sent by the user.
+    @param        List:  List to check if the input is a member.
+    @param        Z:  Boolean, true if the input is part of the list, false if not.
+    @param        Val:  Checked value if the input was a member of the list.
+
+*/
 member_val(X,[],Z,Val):- Z = 0.
 member_val(X,[Y|_],Z,Val):- (X == Y -> Z = 1,Val = Y,!).
 member_val(X,[_|R],Z,Val):- member_val(X,R,Z,Val).
 
 
 
-
-%devuelve la longitud de una lista.
+/*
+    Returns the length of a list or sentence.
+    @param      List:   list or sentece to count.
+    @param      Len:    Length of the list.
+*/
 longitud([],0).
 longitud([_|R],Len):- longitud(R,Len1), Len is Len1+1.
 
 
 
 
-
+/*
+    All the is_X functions receive a sentence sent by the user and checks if that sentence contains a food, drink, place, a question or a help text
+    it can return the check value if needed or just return the boolean.
+    @param        List:  sentence sent by the user as input.
+    @param        X:  value checked by the function.
+    @param        Z:  boolean if the sentence contains a value or not.
+   
+*/
 is_question([],Z):- Z= 0 .
 is_question([H|_],Z):- (H == '?' -> Z=1) .
 is_question([_|N],Z):- is_question(N,Z) .
-
 
 is_comida(H,X,Z):- get_comidas(Ca),get_comidas2(Cb),member(H,Ca,Za),member_list(H,Cb,Zb),(Za==1 ->X = H,Z=1;Zb==1 ->X = H,Z=1).
 is_comida([H|_],X,Z):- get_comidas(Ca),get_comidas2(Cb),member(H,Ca,Za),member_list(H,Cb,Zb),(Za==1 ->X = H,Z=1;Zb==1 ->X = H,Z=1).
@@ -87,7 +124,6 @@ is_comida([],Z):- Z=0.
 is_comida([H|_],Z):- get_comidas(Ca),get_comidas2(Cb),member(H,Ca,Za),member_list(H,Cb,Zb),(Za==1 ->Z=1,!;Zb==1 ->Z=1,!).
 is_comida([_|N],Z):-is_comida(N,Z).
 
-
 is_bebida(H,X,Z):- get_bebidas(Ca),get_bebidas2(Cb),member(H,Ca,Za),member_list(H,Cb,Zb),(Za==1 ->X = H,Z=1;Zb==1 ->X = H,Z=1).
 is_bebida([H|_],X,Z):- get_bebidas(Ca),get_bebidas2(Cb),member(H,Ca,Za),member_list(H,Cb,Zb),(Za==1 ->X = H,Z=1;Zb==1 ->X = H,Z=1).
 is_bebida([_|N],X,Z):-is_bebida(N,X,Z).
@@ -96,17 +132,14 @@ is_bebida([],Z):- Z = 0.
 is_bebida([H|_],Z):-get_bebidas(Ca),get_bebidas2(Cb),member(H,Ca,Za),member_list(H,Cb,Zb),(Za ==1 ->Z=1;Zb ==1 ->Z=1).
 is_bebida([_|N],Z):-is_bebida(N,Z).
 
-
 is_place(H,X,Z):- get_lugares(Ca),get_lugares2(Cb),member(H,Ca,Za),member(H,Cb,Zb),(Za==1 ->X = H,Z=1 ; Zb==1 ->X = H,Z=1).
 is_place([],Z):- Z=0.
 is_place([H|_],Z):-get_lugares(Ca),get_lugares2(Cb),member(H,Ca,Za),member_list(H,Cb,Zb),(Za==1 ->Z=1,!;Zb==1 ->Z=1,!).
 is_place([_|N],Z):- is_place(N,Z).
 
-
 is_amount([],Z):- Z=0.
 is_amount([H|_],Z):- (numberatom(H) -> Z = 1 ,!).
 is_amount([_|N],Z):- is_amount(N,Z).
-
 
 is_ayuda([],Z):- Z=0.
 is_ayuda([H|_],Z):- (H=='ayuda' -> Z=1,!;H=='Ayuda' -> z=1,!).
@@ -117,7 +150,7 @@ is_ayuda([_|N],Z):- is_ayuda(N,Z).
 
 
 /*
-    Receives a sentences and sends the value to the correct validation, it returns the validated value.
+    Receives a sentence and sends that to the correct validation, it returns the correct validated value.
     @param        Oracion:  sentence sent by the user as a list.
     @param        X:  checked core value of the sentence.
 
@@ -172,7 +205,7 @@ validate_question([H|N]):-read_question(H,P),is_bebida(N,Z),(P == 2,Z==0 -> nl,w
 validate_question([_|N]):-validate_question(N).
 
 /*
-    Receives a atom and cheks if its a value for a question, returns an int to indicate wich question is asking.
+    Receives an atom and checks if its an identification word for a question, returns an int to indicate wich question is being asked.
     @param        H:  atom with the question value.
     @param        Z:  int that indicates the question type.
 
@@ -181,16 +214,20 @@ read_question(H,Z):-  z = 0.
 read_question(H,Z):- (H=='comida' -> Z=1,! ;H=='comidas' -> Z=1,!).
 read_question(H,Z):- (H=='bebida' -> Z=2,! ;H=='bebidas' -> Z=2,!).
 
-
+/*
+    Receives an atom and checks if the atom is a number.
+    @param        Atom:  atom input sent by the user.
+*/
 numberatom(Atom) :-
    atom_chars(Atom, Chs),
     catch(number_chars(_, Chs), error(syntax_error(_),_), false).
 
 
+
 /*
     Checks if user input is part of a sublist in the database, returns the principal categorie of the input.
-    @param        X:  type of food, drink or place set by the user
-    @param        Y:  principal categorie of the input
+    @param        X:  type of food, drink or place set by the user.
+    @param        Y:  principal categorie of the input.
 
 */
 check_sub(X,Y):- get_comidas(Ca),member_val(X,Ca,Za,Val),(Za==1,Y = Val).
@@ -240,18 +277,23 @@ search_restaurant(TipoComida,TipoBebida,Lugar,Capacidad):-
 recomendar_rest(Nombre,Lugar,Ubicacion,Menu,Indicaciones):- nl, write('Encontramos un restaurante ideal!'),nl,write('-Su nombre es: '), write(Nombre),nl,write('-Se ubica en: '),write(Ubicacion),write(' de '),write(Lugar),nl,write('-Un comentario del restaurante: '),write(Indicaciones),nl,nl,ask_again().
 
 
-% Pregunta al usuario si quiere volver a correr el programa.
+/*
+    Ask the user if they want to do another search, if yes then call the startES. again, else stops the program.
+
+*/
 ask_again(Response):- member('Si',Response,Z),(Z==1 -> startES).
 ask_again(Response):- member('Si',Response,Z),(Z==0 -> !).
 ask_again():-write('Desea volver a buscar?'),nl,write('Si / No'),nl,readln(Response),ask_again(Response).
 
-
+/*
+    Prints the help menu on the terminal to show extra information for the user.
+*/
 printAyuda():-nl,write('-Este es el menu de ayuda!'),nl,write('Puede hacerle preguntas a RestauranTEC como: '),nl,write('-"que (comidas/bebidas) tienen?"'),nl,write('-"que tipo de (comida/bebida) (especifico[a]) tienen?"').
 
 
 
 /*
-    Starts the Expert System to ask the user about wich food, drinks, place and amount of people for the restaurant search
+    Starts the Expert System to ask the user about wich food, drinks, place and the amount of people for the restaurant search
 */
 startES:-
     writeln('
