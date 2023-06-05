@@ -231,7 +231,7 @@ noun(sing, _, [leche|S],S).
 % locations
 
 noun(sing, _, ['Cartago'|S],S).
-noun(sing, _, ['SanJose'|S],S).
+noun(sing, _, ['Alajuela'|S],S).
 noun(sing, _, ['Heredia'|S],S).
 
 noun(sing, _, ['McDonalds'|S],S).

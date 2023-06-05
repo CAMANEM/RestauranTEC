@@ -108,7 +108,7 @@ restaurante([
      'Balcon Criollo',
      'tipica',
      ['caliente','coctel','cerveza','natural'],
-     'SanJose',
+     'Alajuela',
      'Diagonal a esquina Noroeste del Parque La Sabana',
      ['Casado','Prensada','Mondongo','Tortilla'],
      '15',
@@ -119,7 +119,7 @@ restaurante([
     'Cuchara Oriental',
     'china',
     ['gaseosa','natural'],
-    'SanJose',
+    'Alajuela',
     'entre Av 16 y 14 sobre calle 11 Avenida Cleto Gonz�lez V�quez',
     ['Gyozas','Dumplings','Cantones','Tofu'],
     '35',
@@ -129,7 +129,7 @@ restaurante([
     'Yong Xing',
     'china',
     ['gaseosa','cerveza'],
-    'SanJose',
+    'Alajuela',
     '100 mts oeste del Super Kion',
     ['Gyozas','Dumplings','Cantones','Tofu'],
     '20',
@@ -140,7 +140,7 @@ restaurante([
     'Samadhi',
     'saludable',
     ['natural','caliente'],
-    'SanJose',
+    'Alajuela',
     'Calle 35, entre ave 5 Y 7, Barrio Escalante',
     ['Sandwich','Ensalada','Pasta','Falafel'],
     '11',
@@ -151,7 +151,7 @@ restaurante([
     'KFC',
     'rapida',
     ['gaseosa','caliente'],
-    'SanJose',
+    'Alajuela',
     'diagonal al mercado central, Av. 6',
     ['Hamburguesa','Desayuno','Postre','Papas','Pollo'],
     '12',
@@ -161,7 +161,7 @@ restaurante([
      'Rancho Los Coyotes',
      'tipica',
      ['caliente','coctel','cerveza','natural'],
-     'SanJose',
+     'Alajuela',
      '1.6 km al oeste, 100 m al sur del Parque Republica del Peru',
      ['Casado','Prensada','Mondongo','Tortilla'],
      '6',
@@ -206,8 +206,8 @@ bebida(['cerveza',['nacional','corona','heineken','guiness'],['Balcon Criollo', 
 
 lugar(['Cartago',['cartago'],['McDonalds', 'Balcon Criollo', 'KFC']]).
 %lugar(['cartago',['McDonalds', 'Balcon Criollo', 'KFC']]).
-lugar(['SanJose',['sanjose'],['Balcon Criollo', 'Cuchara Oriental', 'Yong Xing', 'Samadhi', 'KFC', 'Rancho Los Coyotes']]).
-% lugar(['sanjose',['Balcon Criollo', 'Cuchara Oriental', 'Yong Xing',
+lugar(['Alajuela',['alajuela'],['Balcon Criollo', 'Cuchara Oriental', 'Yong Xing', 'Samadhi', 'KFC', 'Rancho Los Coyotes']]).
+% lugar(['alajuela',['Balcon Criollo', 'Cuchara Oriental', 'Yong Xing',
 % 'Samadhi', 'KFC', 'Rancho Los Coyotes']]).
 lugar(['Heredia',['heredia'],['Subway', 'KFC', 'La Dolce Vita', 'Ragu']]).
 %lugar([,['Subway', 'KFC', 'La Dolce Vita', 'Ragu']]).
