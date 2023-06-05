@@ -75,6 +75,7 @@ adjective(sing, fem, [fria|S], S).
 adjective(plu, masc, [frios|S], S).
 adjective(plu, fem, [frias|S], S).
 
+adjective(sing, masc, [frito|S], S).
 adjective(plu, fem, [fritas|S], S).
 
 % bebidas
@@ -156,6 +157,7 @@ noun(plu, fem, [comidas|S],S).
 
 noun(plu, fem, [papas|S],S).
 noun(sing, masc, [postre|S],S).
+noun(sing, masc, [pollo|S],S).
 
 noun(sing, masc, [casado|S],S).
 noun(sing, masc, [mondongo|S],S).

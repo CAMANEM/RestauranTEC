@@ -12,7 +12,7 @@ restaurante([
     'gaseosa',
     'Cartago',
     '150 m sur del walmart de caballo blanco',
-    ['Hamburguesa','Desayuno','Postre','Papas'],
+    ['Hamburguesa','Desayuno','Postre','Papas','Pollo'],
      '30',
      'Este es un restaurante para toda la familia, area de juego para niños']).
 
@@ -33,7 +33,7 @@ restaurante([
     'gaseosa',
     'Cartago',
     'diagonal al mercado central, Av. 6',
-    ['Hamburguesa','Desayuno','Postre','Papas'],
+    ['Hamburguesa','Desayuno','Postre','Papas','Pollo'],
     '12',
     'El mejor pollo al mejor precio, aproveche']).
 
@@ -75,7 +75,7 @@ restaurante([
     'gaseosa',
     'Heredia',
     'diagonal al mercado central, Av. 6',
-    ['Hamburguesa','Desayuno','Postre','Papas'],
+    ['Hamburguesa','Desayuno','Postre','Papas','Pollo'],
     '12',
     'El mejor pollo al mejor precio, aproveche']).
 
@@ -153,7 +153,7 @@ restaurante([
     'gaseosa',
     'SanJose',
     'diagonal al mercado central, Av. 6',
-    ['Hamburguesa','Desayuno','Postre','Papas'],
+    ['Hamburguesa','Desayuno','Postre','Papas','Pollo'],
     '12',
     'El mejor pollo al mejor precio, aproveche']).
 
@@ -177,7 +177,7 @@ restaurante([
 
 
 
-comida(['rapida',['hamburguesa','papas','sandwich','postre'],['McDonalds', 'KFC']]).
+comida(['rapida',['hamburguesa','papas','sandwich','postre','pollo'],['McDonalds', 'KFC']]).
 comida(['tipica',['casado','prensada','mondongo','tortilla'],['Balcon Criollo', 'Rancho Los Coyotes']]).
 comida(['saludable',['sandwich','ensalada','pasta','falafel'],['Samadhi', 'Subway']]).
 comida(['italiana',['pizza','spaghetti ','lasagna','gelato'],['La Dolce Vita', 'Ragu']]).
