@@ -873,6 +873,14 @@ pronoun(sing, frst, [yo|S], S).
     @param    S0:  list of words
     @param     S:  list of words remaining after the prepositional phrase
 */
+
+prepositional_phrase(S0, S) :-
+    adverb(S0, S1),
+    preposition(S1, S2),
+    noun(Num, Gen, S2, S3),
+    adjective(Num, Gen, S3, S).
+
+
 prepositional_phrase(S0, S) :-
     adverb(S0, S1),
     preposition(S1, S2),
